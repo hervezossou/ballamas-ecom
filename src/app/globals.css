@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
    --font-sans: var(--font-archivo-variable);
    --font-mono: var(--font-chillax-variable);
+   --color-b-white: oklch(1 0 0);
+   --color-b-light-gray: oklch(0.9219 0 0);
+   --color-b-gray: oklch(0.8172 0 0);
+   --color-b-dark-gray: oklch(0.5931 0 0);
+   --color-b-black: oklch(0.2308 0 0);
+   --color-b-green: oklch(0.4337 0.0668 158.63);
+   --color-b-purple: oklch(0.3408 0.0674 291.85);
+   --color-b-ocean: oklch(0.4123 0.0465 210.1);
+   --color-b-olive: oklch(0.5183 0.0505 97.94);
 }
 
 body {
