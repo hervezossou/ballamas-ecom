@@ -1,16 +1,13 @@
 import localFont from "next/font/local";
 
-const archivoVariable = localFont({
-   src: "/fonts/Archivo-Variable.woff2",
+export const archivoFont = localFont({
+   src: "../../public/fonts/Archivo-Variable.woff2",
    variable: "--font-archivo-variable",
    display: "swap",
 });
 
-const chillaxVariable = localFont({
-   src: "/fonts/Chillax-Variable.woff2",
+export const chillaxFont = localFont({
+   src: "../../public/fonts/Chillax-Variable.woff2",
    variable: "--font-chillax-variable",
    display: "swap",
 });
-
-
-export default { archivoVariable, chillaxVariable };
