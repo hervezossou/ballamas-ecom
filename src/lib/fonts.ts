@@ -11,3 +11,6 @@ const chillaxVariable = localFont({
    variable: "--font-chillax-variable",
    display: "swap",
 });
+
+
+export default { archivoVariable, chillaxVariable };
