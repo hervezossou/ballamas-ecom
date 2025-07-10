@@ -6,3 +6,12 @@ export interface Product {
    image: string;
    description: string;
 }
+
+export interface LogoProps {
+   variant: "light" | "dark";
+}
+
+export interface HamburgerProps {
+   isOpen: boolean;
+   onClick: () => void;
+};
