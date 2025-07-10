@@ -14,4 +14,6 @@ export interface LogoProps {
 export interface HamburgerProps {
    isOpen: boolean;
    onClick: () => void;
-};
+}
+
+export type ProductSize = "XS" | "S" | "M" | "L" | "XL";
