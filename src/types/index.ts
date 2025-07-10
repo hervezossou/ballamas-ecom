@@ -7,6 +7,11 @@ export interface Product {
    description: string;
 }
 
+export type Category = {
+    label: string;
+    quantity: number;
+}
+
 export interface LogoProps {
    variant: "light" | "dark";
 }
