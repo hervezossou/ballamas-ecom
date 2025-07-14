@@ -8,9 +8,9 @@ export interface Product {
 }
 
 export type Category = {
-    label: string;
-    quantity: number;
-}
+   label: string;
+   quantity: number;
+};
 
 export interface LogoProps {
    variant: "light" | "dark";
