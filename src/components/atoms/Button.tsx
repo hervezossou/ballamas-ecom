@@ -2,9 +2,10 @@ import clsx from "clsx";
 import Image from "next/image";
 
 interface ButtonProps {
-   label?: string;
-   showIcon?: boolean;
    variant: "filled" | "outlined";
+   color?: "black" | "white";
+   label?: string;
+   icon?: string;
    size: "small" | "large";
    layout: "default" | "reverse";
    onClick?: () => void;
@@ -12,15 +13,15 @@ interface ButtonProps {
 
 const baseStyles = `flex items-center justify-center gap-[6px] px-5 py-3 rounded-full cursor-pointer transition-colors duration-300 font-semibold`;
 
-const variantStyles = {
-   filled: "bg-b-black text-b-white",
-   outlined: "bg-b-white text-b-black border-2 border-b-black",
+const heightStyles = {
+   small: "h-11",
+   large: "h-[68px]",
 };
 
-const sizeStyles = {
-   small: "h-11 text-sm",
-   large: "h-[68px] text-lg",
-};
+const labelStyles = {
+   small: "text-sm",
+   large: "text-lg",
+}
 
 const layoutStyles = {
    default: "flex-row",
@@ -28,45 +29,56 @@ const layoutStyles = {
 };
 
 export const Button = ({
+   variant ="filled",
+   color = "white",
    label,
-   showIcon,
-   variant,
-   size,
-   layout,
+   icon,
+   size="small",
+   layout="default",
    onClick,
 }: ButtonProps) => {
-   const widthClass =
-      showIcon && size === "small" && label !== ""
-         ? "w-[154px]"
-         : showIcon && label === "" && size === "small"
-           ? "w-11"
-           : showIcon && label === "" && size === "large"
-             ? "w-[68px]"
-             : size === "large"
-               ? "w-[180px]"
-               : "w-[128px]";
+   const hasIcon = Boolean(icon);
+   const hasLabel = Boolean(label);
+   const isIconOnly = hasIcon && !hasLabel;
 
+   const getWidthStyles = () => {
+      if (isIconOnly) {
+         return size === "small" ? "w-11" : "w-[68px]";
+      }
+      if (hasIcon && hasLabel) {
+         return size === "small" ? "w-[154px]" : "w-[180px]";
+      }
+      return size === "large" ? "w-[180px]" : "w-[128px]";
+   }
+
+   const widthStyles = getWidthStyles();
+
+   const variantStyles = {
+      filled: `${color === "black" ? "bg-b-black text-b-white" : "bg-b-white text-b-black"} hover:bg-opacity-90`,
+      outlined: `${color === "black" ? "bg-b-white text-b-black border-2 border-b-black" : "bg-b-black text-b-white border-2 border-b-white"} hover:bg-opacity-90`,
+   };
+   
    return (
       <button
          className={clsx(
             baseStyles,
             variantStyles[variant],
-            sizeStyles[size],
+            heightStyles[size],
             layoutStyles[layout],
-            widthClass
+            widthStyles
          )}
          onClick={onClick}
       >
-         {showIcon && (
+         {icon && (
             <Image
-               src={`/icons/${variant === "filled" ? "circle-white" : "circle-black"}.svg`}
+               src={icon}
                alt="Circle Icon"
                width={20}
                height={20}
                className="w-auto h-auto shrink-0"
             />
          )}
-         {label && <span className="text-nowrap tracking-tight">{label}</span>}
+         {label && <span className={clsx(labelStyles, "text-nowrap tracking-tight")}>{label}</span>}
       </button>
    );
 };
