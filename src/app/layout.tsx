@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { archivoFont, chillaxFont } from "../lib/fonts";
+import { archivoFont, chillaxFont, jetBrainsMono } from "../lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body
-            className={`${archivoFont.variable} ${chillaxFont.variable} antialiased`}
+            className={`${archivoFont.variable} ${chillaxFont.variable} ${jetBrainsMono.className} antialiased`}
          >
             {children}
          </body>
