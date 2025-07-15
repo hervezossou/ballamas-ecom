@@ -1,10 +1,12 @@
 export interface Product {
    id: string;
    title: string;
-   handle: string;
-   price: { amount: number; currencyCode: string };
-   image: string;
    description: string;
+   price: { amount: number; currencyCode: string };
+   featuredImage: {
+      id: string;
+      url: string;
+   };
 }
 
 export type Category = {
@@ -22,3 +24,5 @@ export interface HamburgerProps {
 }
 
 export type ProductSize = "XS" | "S" | "M" | "L" | "XL";
+
+export type ProductColor = "ocean" | "olive" | "purple" | "green";
