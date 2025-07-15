@@ -7,7 +7,7 @@ interface ButtonProps {
    label?: string;
    icon?: string;
    size: "small" | "large";
-   layout: "default" | "reverse";
+   layout?: "default" | "reverse";
    onClick?: () => void;
 }
 
@@ -21,7 +21,7 @@ const heightStyles = {
 const labelStyles = {
    small: "text-sm",
    large: "text-lg",
-}
+};
 
 const layoutStyles = {
    default: "flex-row",
@@ -29,12 +29,12 @@ const layoutStyles = {
 };
 
 export const Button = ({
-   variant ="filled",
+   variant = "filled",
    color = "white",
    label,
    icon,
-   size="small",
-   layout="default",
+   size = "small",
+   layout = "default",
    onClick,
 }: ButtonProps) => {
    const hasIcon = Boolean(icon);
@@ -49,15 +49,15 @@ export const Button = ({
          return size === "small" ? "w-[154px]" : "w-[180px]";
       }
       return size === "large" ? "w-[180px]" : "w-[128px]";
-   }
+   };
 
    const widthStyles = getWidthStyles();
 
    const variantStyles = {
       filled: `${color === "black" ? "bg-b-black text-b-white" : "bg-b-white text-b-black"} hover:bg-opacity-90`,
-      outlined: `${color === "black" ? "bg-b-white text-b-black border-2 border-b-black" : "bg-b-black text-b-white border-2 border-b-white"} hover:bg-opacity-90`,
+      outlined: `${color === "black" ? "bg-b-white text-b-black border-2 border-b-black" : "bg-transparent text-b-black border-2 border-b-black"} hover:bg-opacity-90`,
    };
-   
+
    return (
       <button
          className={clsx(
@@ -78,7 +78,11 @@ export const Button = ({
                className="w-auto h-auto shrink-0"
             />
          )}
-         {label && <span className={clsx(labelStyles, "text-nowrap tracking-tight")}>{label}</span>}
+         {label && (
+            <span className={clsx(labelStyles, "text-nowrap tracking-tight")}>
+               {label}
+            </span>
+         )}
       </button>
    );
 };
