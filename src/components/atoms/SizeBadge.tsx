@@ -1,6 +1,5 @@
 import { ProductSize } from "@/types";
 import clsx from "clsx";
-import { useState } from "react";
 
 interface SizeBadgeProps {
    size: ProductSize;
@@ -9,7 +8,12 @@ interface SizeBadgeProps {
    variant: "small" | "large";
 }
 
-export const SizeBadge = ({ size, isSelected, onSelect, variant }: SizeBadgeProps) => {
+export const SizeBadge = ({
+   size,
+   isSelected,
+   onSelect,
+   variant,
+}: SizeBadgeProps) => {
    const baseStyles = `flex items-center justify-center p-3.5 rounded-full cursor-pointer transition-all font-medium ${isSelected ? "bg-b-black text-b-white" : "bg-none text-b-black border-2 border-b-black"} duration-300 ease-in-out`;
 
    const variantStyles = {
