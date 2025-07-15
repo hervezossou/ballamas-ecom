@@ -11,12 +11,13 @@ interface InputProps {
     placeholder?: string;
     iconPosition?: IconPosition;
     iconSrc?: string;
+    textColor?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputField = ({ type, value, label, name, placeholder, iconPosition, iconSrc, onChange }: InputProps) => {
+export const InputField = ({ type, value, label, name, placeholder, iconPosition, iconSrc, textColor = "white", onChange }: InputProps) => {
     return (
-        <div className="w-full max-w-xs flex items-center bg-b-white gap-2 px-3.5 rounded-full font-archivo h-11 border border-b-dark-gray focus-within:border-2 focus-within:border-emerald-600">
+        <div className="w-full max-w-xs flex items-center bg-transparent gap-2 px-3.5 rounded-full font-archivo h-11 border border-b-dark-gray focus-within:border-2 focus-within:border-emerald-600">
             <label htmlFor={name} className="block sr-only text-b-black text-sm font-medium">
                 {label}
             </label>
@@ -31,7 +32,7 @@ export const InputField = ({ type, value, label, name, placeholder, iconPosition
                 name={name}
                 id={label}
                 value={value}
-                className="w-full h-full not-autofill:shadow-none placeholder:text-b-black bg-transparent outline-none text-b-black text-sm"
+                className={`w-full h-full not-autofill:shadow-none bg-transparent outline-none placeholder:text-b-${textColor} text-b-${textColor} text-sm`}
                 placeholder={placeholder}
                 onChange={onChange}
             />
