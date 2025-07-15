@@ -26,6 +26,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                alt={`${product.title} image`}
                width={674}
                height={672}
+               className="object-cover"
             />
          </div>
          <div className="flex flex-col items-start justify-between gap-4 lg:w-1/2 lg:gap-7">
@@ -71,7 +72,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                   />
                   <Button
                      variant="outlined"
-                     color="white"
+                     color="black"
                      label="ADD TO CART"
                      size="large"
                   />
