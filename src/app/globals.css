@@ -3,6 +3,7 @@
 @theme {
    --font-archivo: var(--font-archivo);
    --font-chillax: var(--font-chillax);
+   --font-mono: var(--font-jetbrains-mono);
    --color-b-white: oklch(1 0 0);
    --color-b-light-gray: oklch(0.9219 0 0);
    --color-b-gray: oklch(0.8172 0 0);
