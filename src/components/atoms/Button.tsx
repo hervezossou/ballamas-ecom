@@ -8,6 +8,7 @@ interface ButtonProps {
    icon?: string;
    size: "small" | "large";
    layout?: "default" | "reverse";
+   className?: string;
    onClick?: () => void;
 }
 
@@ -35,6 +36,7 @@ export const Button = ({
    icon,
    size = "small",
    layout = "default",
+   className,
    onClick,
 }: ButtonProps) => {
    const hasIcon = Boolean(icon);
@@ -54,8 +56,8 @@ export const Button = ({
    const widthStyles = getWidthStyles();
 
    const variantStyles = {
-      filled: `${color === "black" ? "bg-b-black text-b-white" : "bg-b-white text-b-black"} hover:bg-opacity-90`,
-      outlined: `${color === "black" ? "bg-b-white text-b-black border-2 border-b-black" : "bg-transparent text-b-black border-2 border-b-black"} hover:bg-opacity-90`,
+      filled: `${color === "black" ? "bg-b-black text-b-white hover:bg-b-black/90" : "bg-b-white text-b-black hover:bg-b-white/90"}`,
+      outlined: `${color === "black" ? "bg-transparent text-b-black border-2 border-b-black hover:bg-b-black hover:text-b-white" : "bg-transparent text-b-white border-2 border-b-white"}`,
    };
 
    return (
@@ -65,7 +67,8 @@ export const Button = ({
             variantStyles[variant],
             heightStyles[size],
             layoutStyles[layout],
-            widthStyles
+            widthStyles,
+            className
          )}
          onClick={onClick}
       >
