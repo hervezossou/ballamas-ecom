@@ -10,19 +10,22 @@ interface InputProps {
     name: string;
     placeholder?: string;
     iconPosition?: IconPosition;
-    iconSrc?: string;
-    textColor?: string;
+    icon?: string;
+    color: "black" | "white";
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputField = ({ type, value, label, name, placeholder, iconPosition, iconSrc, textColor = "white", onChange }: InputProps) => {
+export const InputField = ({ type, value, label, name, placeholder, iconPosition, icon, color = "white", onChange }: InputProps) => {
     return (
-        <div className="w-full max-w-xs flex items-center bg-transparent gap-2 px-3.5 rounded-full font-archivo h-11 border border-b-dark-gray focus-within:border-2 focus-within:border-emerald-600">
-            <label htmlFor={name} className="block sr-only text-b-black text-sm font-medium">
+        <div className={`w-full max-w-xs flex items-center bg-transparent gap-2 px-3.5 rounded-full font-archivo h-11 border ${color === "black" ? "border-b-dark-gray" : "border-b-white"} focus-within:border-2 focus-within:border-emerald-600`}>
+            <label 
+                htmlFor={name} 
+                className={`block sr-only ${color === "black" ? "text-b-black" : "text-b-white"} text-sm font-medium`}
+            >
                 {label}
             </label>
-            {iconSrc && iconPosition === "left" && (<Image 
-                src={iconSrc} 
+            {icon && iconPosition === "left" && (<Image 
+                src={icon} 
                 width={20} 
                 height={20} 
                 alt="custom icon" 
@@ -32,12 +35,12 @@ export const InputField = ({ type, value, label, name, placeholder, iconPosition
                 name={name}
                 id={label}
                 value={value}
-                className={`w-full h-full not-autofill:shadow-none bg-transparent outline-none placeholder:text-b-${textColor} text-b-${textColor} text-sm`}
+                className={`w-full h-full not-autofill:shadow-none bg-transparent outline-none ${color === "black" ? "placeholder:text-b-black text-b-black" : "text-b-white placeholder:text-b-white"} text-sm`}
                 placeholder={placeholder}
                 onChange={onChange}
             />
-            {iconSrc && iconPosition === "right" && (<Image 
-                src={iconSrc} 
+            {icon && iconPosition === "right" && (<Image 
+                src={icon} 
                 width={20} 
                 height={20} 
                 alt="custom icon" 
