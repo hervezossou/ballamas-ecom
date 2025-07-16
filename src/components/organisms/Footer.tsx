@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { InputField } from "../atoms/InputField";
 import { Button } from "../atoms/Button";
+import { Logo } from "../atoms/Logo";
 import { productLinks, categoriesLinks, socialLinks } from "../../lib/links";
 
 export const Footer = () => {
@@ -15,12 +16,7 @@ export const Footer = () => {
          <div className="w-full flex flex-col items-start justify-between gap-8 lg:items-center">
             <div className="w-full flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-start">
                <div className="flex max-w-[452px] flex-col items-start justify-between gap-2 md:gap-5">
-                  <Image
-                     src="/images/logo-light.png"
-                     alt="Ballamas Logo"
-                     width={158}
-                     height={36}
-                  />
+                  <Logo variant="light" />
                   <div className="space-y-4">
                      <p className="text-xs text-b-gray font-medium font-archivo md:text-sm">
                         Subscribe to our newsletter for upcoming products and
