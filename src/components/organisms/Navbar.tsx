@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "../atoms/Logo";
@@ -48,7 +50,7 @@ export const Navbar = () => {
    return (
       <header className="sticky top-0 w-full h-20 bg-b-white px-5 md:px-11.5 lg:border-none xl:px-30">
          {/* Desktop */}
-         <div className="hidden py-5 border-b border-b-gray lg:flex lg:items-center lg:justify-between lg:gap-12.5">
+         <div className="hidden h-full py-5 border-b border-b-gray lg:flex lg:items-center lg:justify-between lg:gap-12.5">
             <nav className="flex items-center justify-between gap-4.5">
                {navLinks.map((link) => (
                   <Link
@@ -87,7 +89,7 @@ export const Navbar = () => {
          </div>
 
          {/** Mobile */}
-         <div className="block border-b border-b-gray lg:hidden">
+         <div className="block h-full border-b border-b-gray lg:hidden">
             <div className="flex items-center justify-between py-5 gap-12.5">
                <Hamburger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
                <Logo variant="dark" />
