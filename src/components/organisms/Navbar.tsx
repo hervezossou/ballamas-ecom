@@ -48,7 +48,7 @@ export const Navbar = () => {
    }, [isOpen]);
 
    return (
-      <header className="sticky top-0 w-full h-20 bg-b-white px-5 md:px-11.5 lg:border-none xl:px-30">
+      <header className="sticky z-50 top-0 w-full h-20 bg-b-white px-5 md:px-11.5 lg:border-none xl:px-30">
          {/* Desktop */}
          <div className="hidden h-full py-5 border-b border-b-gray lg:flex lg:items-center lg:justify-between lg:gap-12.5">
             <nav className="flex items-center justify-between gap-4.5">

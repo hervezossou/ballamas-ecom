@@ -23,7 +23,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
          className="flex flex-col gap-4"
       >
          <div
-            className="relative h-[405px] flex items-center justify-center rounded-4xl"
+            className="relative h-full flex items-center justify-center rounded-4xl"
             onMouseEnter={() => setIsVisible(true)}
             onMouseLeave={() => setIsVisible(false)}
          >
