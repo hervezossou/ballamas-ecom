@@ -1,5 +1,6 @@
+"use client"
+
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { InputField } from "../atoms/InputField";
 import { Button } from "../atoms/Button";
