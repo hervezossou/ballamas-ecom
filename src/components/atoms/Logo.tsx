@@ -6,10 +6,11 @@ export const Logo = ({ variant }: LogoProps) => {
    return (
       <Link href="/">
          <Image
-            src={`/images/logo-${variant}.png`}
+            src={`/images/ballamas-${variant}.svg`}
             alt="Logo"
             width={158}
             height={36}
+            className="object-cover"
          />
       </Link>
    );
