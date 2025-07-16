@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { archivoFont, chillaxFont, jetBrainsMono } from "../lib/fonts";
+import { Navbar } from "@/components/organisms/Navbar";
+import { Footer } from "@/components/organisms/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +19,11 @@ export default function RootLayout({
          <body
             className={`${archivoFont.variable} ${chillaxFont.variable} ${jetBrainsMono.className} antialiased`}
          >
-            {children}
+            <Navbar />
+            <main className="min-h-screen flex flex-col px-20 md:px-11.5 xl:px-30">
+                  {children}
+            </main>
+            <Footer />
          </body>
       </html>
    );
