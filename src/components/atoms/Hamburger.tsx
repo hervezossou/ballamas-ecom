@@ -7,7 +7,8 @@ export const Hamburger = ({ isOpen, onClick }: HamburgerProps) => {
          className="flex items-center justify-center size-10 transition-all duration-300 ease-in-out cursor-pointer"
          onClick={onClick}
          role="button"
-         aria-label="Toggle Menu"
+         aria-label={isOpen ? "Close menu" : "Open menu"}
+         aria-expanded={isOpen}
       >
          <Image
             src={`/icons/menu-${isOpen ? "close" : "open"}.svg`}
