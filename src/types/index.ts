@@ -1,13 +1,35 @@
-export interface Product {
+export type Product = {
    id: string;
    title: string;
    description: string;
    price: { amount: number; currencyCode: string };
    featuredImage: {
-      id: string;
       url: string;
    };
-}
+};
+
+export type RawProduct = {
+  id: string;
+  title: string;
+  description: string;
+  variants: {
+    edges: {
+      node: {
+        price: {
+          amount: string;
+          currencyCode: string;
+        };
+      };
+    }[];
+  };
+  images: {
+    edges: {
+      node: {
+        url: string;
+      };
+    }[];
+  };
+};
 
 export type Category = {
    label: string;
