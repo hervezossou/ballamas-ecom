@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { useState } from "react";
 import { SizePicker } from "../molecules/SizePicker";
@@ -18,19 +20,19 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
    return (
       <div
          id={product.id}
-         className="flex flex-col items-center justify-center gap-8 p-8 lg:flex-row lg:gap-16"
+         className="flex flex-col items-start justify-center gap-8 lg:h-[600px] lg:flex-row lg:gap-10.5"
       >
-         <div className="flex flex-col items-center justify-center gap-4 rounded-4xl lg:w-1/2">
+         <div className="flex flex-col items-center w h-full justify-center gap-4 rounded-4xl lg:w-[579px]">
             <Image
                src={product.featuredImage.url}
                alt={`${product.title} image`}
-               width={674}
-               height={672}
-               className="object-cover"
+               width={579}
+               height={600}
+               className="object-cover h-full rounded-4xl transition-transform ease-in-out duration-300 hover:scale-105"
             />
          </div>
-         <div className="flex flex-col items-start justify-between gap-4 lg:w-1/2 lg:gap-7">
-            <div className="flex flex-col gap-4 lg:gap-5">
+         <div className="flex flex-col items-start justify-between gap-4 lg:w-1/2 lg:gap-5.5">
+            <div className="flex flex-col gap-4 h-[410px] lg:gap-5">
                <div className="flex flex-col gap-2 md:gap-3 lg:gap-4.5">
                   <h3 className="text-3xl font-chillax font-semibold md:text-[42px]">
                      {product.title}
@@ -63,18 +65,20 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      <SizePicker />
                   </div>
                </div>
-               <div className="flex items-center gap-2">
+               <div className="flex w-[579px] items-center gap-2">
                   <Button
                      variant="filled"
                      color="black"
                      label="BUY NOW"
                      size="large"
+                     className="w-full"
                   />
                   <Button
                      variant="outlined"
                      color="black"
                      label="ADD TO CART"
                      size="large"
+                     className="w-full"
                   />
                </div>
             </div>
@@ -82,7 +86,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                <h3 className="text-b-black text-2xl font-medium font-chillax md:text-3xl lg:font-semibold lg:text-3xl">
                   Description
                </h3>
-               <p className="text-b-dark-gray text-justify text-sm md:text-lg">
+               <p className="text-b-dark-gray tracking-[-4%] text-justify text-sm md:text-lg">
                   {product.description}
                </p>
             </div>
