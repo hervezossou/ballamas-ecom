@@ -2,6 +2,8 @@
 
 import { ProductDetails } from "@/components/organisms/ProductDetails";
 import { ProductCard } from "@/components/organisms/ProductCard";
+import { Checkbox } from "@/components/atoms/Checkbox";
+import { useState } from "react";
 
 export default function Home() {
    const summerShirt = {
@@ -27,13 +29,20 @@ export default function Home() {
          url: "/images/badacore-tshirt.png",
       },
    };
+
+   const [isEnabled, setIsEnabled] = useState(false);
+
    return (
       <>
-         <section className="flex flex-col items-center justify-between p-24">
+         <section className="flex flex-col items-center justify-between py-10">
             <h1 className="text-4xl font-medium font-archivo">Archivo</h1>
             <p className="font-chillax text-4xl">Chillax</p>
             <ProductDetails product={badacoreShirt} />
             <ProductCard product={summerShirt} />
+            <Checkbox
+               checked={isEnabled}
+               onClick={() => setIsEnabled(!isEnabled)}
+            />
          </section>
       </>
    );
