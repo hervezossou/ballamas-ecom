@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getProductById } from "@/lib/products";
 import { Product } from "@/types";
 import { ProductCard } from "./ProductCard";
+import { ProductCardSkeleton } from "../skeletons/ProductCardSkeleton";
 
 interface ProductCardWrapperProps {
   id: string;
@@ -21,7 +22,7 @@ export const ProductCardWrapper = ({ id }: ProductCardWrapperProps) => {
     fetchProduct();
   }, [id]);
 
-  if (!product) return <div>Chargement...</div>;
+  if (!product) return <ProductCardSkeleton />;
 
   return <ProductCard product={product} />;
 };
