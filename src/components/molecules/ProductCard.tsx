@@ -7,8 +7,7 @@ import { useState } from "react";
 import { Product } from "@/types";
 import { PromoBadge } from "../atoms/PromoBadge";
 import { Button } from "../atoms/Button";
-import { extractShopifyId } from "@/lib/utils/extractShopifyId";
-import { Shojumaru } from "next/font/google";
+import { extractShopifyId } from "@/lib/utils/shopifyId";
 
 interface ProductCardProps {
    product: Product;
@@ -17,8 +16,8 @@ interface ProductCardProps {
 export const ProductCard = ({ product }: ProductCardProps) => {
    const [isVisible, setIsVisible] = useState(false);
    const router = useRouter();
-   
-   const shopifyId = extractShopifyId(product.id)
+
+   const shopifyId = extractShopifyId(product.id);
 
    return (
       <motion.div
