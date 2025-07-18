@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Product } from "@/types";
 import { PromoBadge } from "../atoms/PromoBadge";
 import { Button } from "../atoms/Button";
-import { extractShopifyId } from "@/utils/extractShopifyId";
+import { extractShopifyId } from "@/lib/utils/extractShopifyId";
 import { Shojumaru } from "next/font/google";
 
 interface ProductCardProps {
