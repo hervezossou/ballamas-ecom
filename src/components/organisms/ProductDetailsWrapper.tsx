@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getProductById } from "@/lib/products";
 import { Product } from "@/types";
 import { ProductDetails } from "./ProductDetails";
+import { ProductDetailsSkeleton } from "../skeletons/ProductDetailsSkeleton";
 import { buildShopifyGlobalId } from "@/lib/utils/shopifyId";
 
 interface ProductCardWrapperProps {
@@ -23,7 +24,7 @@ export const ProductDetailsWrapper = ({ id }: ProductCardWrapperProps) => {
       fetchProduct();
    }, [id]);
 
-   if (!product) return <div>Chargement...</div>;
+   if (!product) return <ProductDetailsSkeleton />;
 
    return <ProductDetails product={product} />;
 };
