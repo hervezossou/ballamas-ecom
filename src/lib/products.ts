@@ -1,7 +1,7 @@
 import { graphqlClient } from "./graphqlClient";
 import { gql } from "graphql-request";
 import { Product, RawProduct } from "@/types";
-import { mapProduct } from "@/utils/mapProduct";
+import { mapProduct } from "@/lib/utils/mapProduct";
 
 export type GetProductByIdResponse = {
    product: RawProduct;
