@@ -7,22 +7,22 @@ import { ProductCard } from "./ProductCard";
 import { ProductCardSkeleton } from "../skeletons/ProductCardSkeleton";
 
 interface ProductCardWrapperProps {
-  id: string;
+   id: string;
 }
 
 export const ProductCardWrapper = ({ id }: ProductCardWrapperProps) => {
-  const [product, setProduct] = useState<Product | null>(null);
+   const [product, setProduct] = useState<Product | null>(null);
 
-  useEffect(() => {
-    async function fetchProduct() {
-      const data = await getProductById(id);
-      setProduct(data);
-    }
+   useEffect(() => {
+      async function fetchProduct() {
+         const data = await getProductById(id);
+         setProduct(data);
+      }
 
-    fetchProduct();
-  }, [id]);
+      fetchProduct();
+   }, [id]);
 
-  if (!product) return <ProductCardSkeleton />;
+   if (!product) return <ProductCardSkeleton />;
 
-  return <ProductCard product={product} />;
+   return <ProductCard product={product} />;
 };
