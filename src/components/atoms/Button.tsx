@@ -6,13 +6,14 @@ interface ButtonProps {
    color?: "black" | "white";
    label?: string;
    icon?: string;
+   iconAlt?: string;
    size: "small" | "large";
    layout?: "default" | "reverse";
    className?: string;
    onClick?: () => void;
 }
 
-const baseStyles = `flex items-center justify-center gap-[6px] px-5 py-3 rounded-full cursor-pointer transition-colors duration-300 font-semibold`;
+const baseStyles = `flex items-center justify-center gap-[6px] rounded-full cursor-pointer transition-colors duration-300 font-semibold`;
 
 const heightStyles = {
    small: "h-11",
@@ -34,6 +35,7 @@ export const Button = ({
    color = "white",
    label,
    icon,
+   iconAlt,
    size = "small",
    layout = "default",
    className,
@@ -48,9 +50,11 @@ export const Button = ({
          return size === "small" ? "w-11" : "w-[68px]";
       }
       if (hasIcon && hasLabel) {
-         return size === "small" ? "w-[154px]" : "w-[180px]";
+         return size === "small"
+            ? "w-[154px] px-5 py-3"
+            : "w-[180px] px-5 py-3";
       }
-      return size === "large" ? "w-[180px]" : "w-[128px]";
+      return size === "large" ? "w-[180px] px-5 py-3" : "w-max px-5 py-3";
    };
 
    const widthStyles = getWidthStyles();
@@ -75,10 +79,10 @@ export const Button = ({
          {icon && (
             <Image
                src={icon}
-               alt="Circle Icon"
+               alt={iconAlt || "Button Icon"}
                width={20}
                height={20}
-               className="w-auto h-auto shrink-0"
+               className="shrink-0"
             />
          )}
          {label && (
