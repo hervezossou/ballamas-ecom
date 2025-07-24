@@ -20,7 +20,7 @@ export default function RootLayout({
             className={`${archivoFont.variable} ${chillaxFont.variable} ${jetBrainsMono.className} antialiased`}
          >
             <Navbar />
-            <main className="min-h-screen flex flex-col px-20 md:px-11.5 xl:px-30">
+            <main className="min-h-screen flex flex-col px-5 md:px-11.5 xl:px-30">
                {children}
             </main>
             <Footer />
