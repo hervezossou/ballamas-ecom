@@ -2,6 +2,7 @@ import { ProductDetailsWrapper } from "@/components/organisms/ProductDetailsWrap
 import { ProductCardWrapper } from "@/components/molecules/ProductCardWrapper";
 import { CategoriesFilter } from "@/components/molecules/CategoriesFilter";
 import { Button } from "@/components/atoms/Button";
+import Image from "next/image";
 
 export default function Page() {
    const productId = "gid://shopify/Product/7982905098262";
@@ -61,6 +62,44 @@ export default function Page() {
             </div>
             <ProductDetailsWrapper id="7982905098262" />
          </section>
+         <div className="w-full flex items-center justify-center py-10 mb-14">
+            <section className="w-full max-w-[1200px] flex flex-col items-center justify-center gap-9">
+               <div className="flex flex-col items-center justify-center gap-1">
+                  <h2 className="font-chillax font-semibold uppercase text-2xl md:text-3xl lg:text-4xl">
+                     Our Collection
+                  </h2>
+                  <p className="font-archivo text-b-dark-gray text-sm md:text-base lg:text-lg text-center">
+                     Our latest collection, where classic and contemporary styles converge in perfect harmony.
+                  </p>
+               </div>
+               <div className="w-full max-w-[996px] flex flex-col gap-4 md:flex-row">
+                  <div className="relative bg-tech-mens w-full h-[446px] flex items-center justify-center self-stretch rounded-4xl md:w-1/2 lg:w-1/3">
+                     <div className="absolute bottom-8">
+                        <Button
+                           variant="filled"
+                           size="small"
+                           color="white"
+                           layout="reverse"
+                           label="Learn more"
+                           icon="/icons/arrow.svg"
+                           iconAlt="Arrow Up Icon"
+                           className="uppercase"
+                        />
+                     </div>
+                  </div>
+                  <div className="bg-george w-full h-[446px] flex items-center justify-center self-stretch rounded-4xl md:w-1/2 lg:w-2/3">
+                     <div className="flex flex-col items-center justify-center gap-1">
+                        <h1 className="uppercase font-chillax font-bold text-3xl text-transparent stroke-b-white text-stroke-white md:text-3xl lg:text-5xl">
+                           Classic Men
+                        </h1>
+                        <p className="font-archivo text-b-white text-sm md:text-lg">
+                           We’re changing the way things get made
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
       </>
    );
 }
