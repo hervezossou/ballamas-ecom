@@ -1,9 +1,6 @@
 export const ProductDetailsSkeleton = () => {
-
    return (
-      <div
-         className="flex flex-col items-start justify-center gap-8 animate-pulse lg:h-[600px] lg:flex-row lg:gap-10.5"
-      >
+      <div className="flex flex-col items-start justify-center gap-8 animate-pulse lg:h-[600px] lg:flex-row lg:gap-10.5">
          <div className="w-full bg-gray-300 h-[600px] rounded-4xl lg:w-[579px]"></div>
          <div className="flex flex-col items-start justify-between gap-4 lg:w-1/2 lg:gap-5.5">
             <div className="flex flex-col gap-4 h-[410px] lg:gap-5">

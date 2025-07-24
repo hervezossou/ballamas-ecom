@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export const ProductCardSkeleton = () => {
    return (
@@ -12,5 +12,5 @@ export const ProductCardSkeleton = () => {
             <div className="h-8 w-1/5 bg-gray-300 rounded-lg" /> {/* Price */}
          </div>
       </div>
-   )
+   );
 };

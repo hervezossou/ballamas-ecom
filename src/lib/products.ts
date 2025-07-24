@@ -25,11 +25,11 @@ export async function getProductById(id: string): Promise<Product | null> {
                }
             }
             images(first: 1) {
-                edges {
-                    node {
-                        url
-                    }
-                }
+               edges {
+                  node {
+                     url
+                  }
+               }
             }
          }
       }
