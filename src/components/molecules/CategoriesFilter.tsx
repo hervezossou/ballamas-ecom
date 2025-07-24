@@ -14,7 +14,7 @@ export const CategoriesFilter = () => {
    const { selectedCategory, setSelectedCategory } = useCategoryStore();
 
    return (
-      <div className="flex flex-wrap gap-2.5">
+      <div className="flex flex-wrap justify-center gap-2.5">
          {categories.map((category) => (
             <CategoryItem
                key={category.label}
