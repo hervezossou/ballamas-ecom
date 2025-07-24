@@ -10,22 +10,22 @@ export default function Page() {
    return (
       <>
          {/* Home Hero Section */}
-         <section className="w-full flex items-center justify-center py-12">
+         <section className="w-full flex items-center justify-center py-8 lg:py-12">
             <div className="w-full min-h-[372px] bg-hero flex flex-col items-center justify-center rounded-[52px] px-5.5 py-10.5 md:h-[460px] md:px-19.5 md:py-24 xl:h-[500px] xl:gap-10">
                <div className="flex flex-col items-center justify-between gap-5 md:gap-10.5">
                   <div className="flex flex-col items-center justify-center gap-4.5">
                      <div className="flex items-center justify-center gap-3">
                         <div className="w-16.5 h-[0.5px] bg-b-white rounded-full"></div>
-                        <p className="font-archivo text-b-white text-sm">
+                        <p className="font-archivo text-b-white text-xs text-center md:text-sm">
                            We bring new fashion to the world
                         </p>
                         <div className="w-16.5 h-[0.5px] bg-b-white rounded-full"></div>
                      </div>
                      <div className="flex flex-col items-center justify-between gap-5">
-                        <h1 className="font-chillax font-bold text-b-white text-xl text-center md:text-3xl xl:text-5xl">
+                        <h1 className="font-chillax font-bold text-b-white text-xl text-center md:text-[42px] xl:text-5xl">
                            DISCOVER THE LATEST FASHION TRENDS HERE
                         </h1>
-                        <p className="max-w-[557px] font-archivo text-b-white text-base text-center">
+                        <p className="max-w-[557px] font-archivo text-b-white text-xs text-center md:text-sm lg:text-base">
                            Discover a world of fashion with our meticulously
                            curated outfits. Shop now to update your wardrobe
                            with chic and stylish outfits.
@@ -53,10 +53,17 @@ export default function Page() {
             </div>
          </section>
 
+         {/* Lastest Trends in Summer Fashion */}
+         <div className="w-full max-w-[1200px] mb-5">
+            <p className="font-chillax font-semibold text-center lg:text-3xl">
+               Discover the latest trends in summer fashion. Shop now and refresh your wardrobe with our stylish summer shirts.
+            </p>
+         </div>
+
          {/* Categories Filter and Product Cards Section */}
          <section className="flex flex-col items-center justify-between py-10 gap-10">
             <CategoriesFilter />
-            <div className="flex items-center justify-between gap-8">
+            <div className="w-full max-w-[1200px] grid grid-cols-1 items-center justify-between gap-8 md:grid-cols-2 lg:px-20 xl:grid-cols-3">
                <ProductCardWrapper id={hoodieId} />
                <ProductCardWrapper id={productId} />
                <ProductCardWrapper id={slidesId} />
