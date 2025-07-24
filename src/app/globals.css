@@ -15,6 +15,12 @@
    --color-b-olive: oklch(0.5183 0.0505 97.94);
 }
 
+.bg-hero {
+   background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%),
+      url(/images/home-hero.png) lightgray 50% / cover no-repeat;
+}
+
 input:-webkit-autofill {
    -webkit-box-shadow: 0 0 0 1000px white inset !important;
    -webkit-text-fill-color: #000 !important;
