@@ -1,8 +1,6 @@
-import { ProductDetailsWrapper } from "@/components/organisms/ProductDetailsWrapper";
 import { ProductCardWrapper } from "@/components/molecules/ProductCardWrapper";
 import { CategoriesFilter } from "@/components/molecules/CategoriesFilter";
 import { Button } from "@/components/atoms/Button";
-import Image from "next/image";
 
 export default function Page() {
    const productId = "gid://shopify/Product/7982905098262";
@@ -11,6 +9,7 @@ export default function Page() {
 
    return (
       <>
+         {/* Home Hero Section */}
          <section className="w-full flex items-center justify-center py-12">
             <div className="w-full min-h-[372px] bg-hero flex flex-col items-center justify-center rounded-[52px] px-5.5 py-10.5 md:h-[460px] md:px-19.5 md:py-24 xl:h-[500px] xl:gap-10">
                <div className="flex flex-col items-center justify-between gap-5 md:gap-10.5">
@@ -53,15 +52,18 @@ export default function Page() {
                </div>
             </div>
          </section>
-         <section className="flex flex-col items-center justify-between py-10 px-10">
+
+         {/* Categories Filter and Product Cards Section */}
+         <section className="flex flex-col items-center justify-between py-10 gap-10">
             <CategoriesFilter />
-            <div className="flex items-center justify-between py-20 gap-8">
+            <div className="flex items-center justify-between gap-8">
                <ProductCardWrapper id={hoodieId} />
                <ProductCardWrapper id={productId} />
                <ProductCardWrapper id={slidesId} />
             </div>
-            <ProductDetailsWrapper id="7982905098262" />
          </section>
+
+         {/* Our Collection Section */}
          <div className="w-full flex items-center justify-center py-10 mb-14">
             <section className="w-full max-w-[1200px] flex flex-col items-center justify-center gap-9">
                <div className="flex flex-col items-center justify-center gap-1">
