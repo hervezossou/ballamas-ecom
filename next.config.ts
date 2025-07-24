@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
       remotePatterns: [
          {
             protocol: "https",
-            hostname: "**.shopify.com"
-         }
+            hostname: "**.shopify.com",
+         },
       ],
    },
 };
