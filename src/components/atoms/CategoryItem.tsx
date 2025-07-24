@@ -4,7 +4,7 @@ import { Category } from "@/types";
 interface CategoryItemProps {
    category: Category;
    isSelected: boolean;
-   onSelect: (category: Category) => void;
+   onSelect: (category: string) => void;
 }
 
 export const CategoryItem = ({
@@ -22,7 +22,7 @@ export const CategoryItem = ({
    return (
       <button
          className={clsx(baseStyles, selectedStyles)}
-         onClick={() => onSelect(category)}
+         onClick={() => onSelect(category.label.toLowerCase())}
          type="button"
          aria-pressed={isSelected}
          aria-label={`Category ${category} ${isSelected ? "selected" : "not selected"}`}
