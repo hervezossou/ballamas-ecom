@@ -21,6 +21,22 @@
       url(/images/home-hero.png) lightgray 50% / cover no-repeat;
 }
 
+.bg-tech-mens {
+   background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%),
+      url(/images/tech-mens-shacket.png) lightgray 50% / cover no-repeat;
+}
+
+.bg-george {
+   background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%),
+      url(/images/abraham-george-unsplash.png) lightgray 50% / cover no-repeat;
+}
+
+.text-stroke-white {
+   -webkit-text-stroke: 1.5px var(--color-b-white, #FFF);
+}
+
 input:-webkit-autofill {
    -webkit-box-shadow: 0 0 0 1000px white inset !important;
    -webkit-text-fill-color: #000 !important;
