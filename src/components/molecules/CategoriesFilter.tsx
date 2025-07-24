@@ -1,6 +1,7 @@
-import { useState } from "react";
+"use client"
 import { Category } from "@/types";
 import { CategoryItem } from "../atoms/CategoryItem";
+import { useCategoryStore } from "@/lib/store";
 
 const categories: Category[] = [
    { label: "All", quantity: 132 },
@@ -10,9 +11,7 @@ const categories: Category[] = [
 ];
 
 export const CategoriesFilter = () => {
-   const [selectedCategory, setSelectedCategory] = useState<Category>(
-      categories[0]
-   );
+   const { selectedCategory, setSelectedCategory } = useCategoryStore()
 
    return (
       <div className="flex flex-wrap gap-2.5">
@@ -20,8 +19,8 @@ export const CategoriesFilter = () => {
             <CategoryItem
                key={category.label}
                category={category}
-               isSelected={selectedCategory === category}
-               onSelect={() => setSelectedCategory(category)}
+               isSelected={selectedCategory === category.label.toLowerCase()}
+               onSelect={setSelectedCategory}
             />
          ))}
       </div>
