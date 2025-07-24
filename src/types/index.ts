@@ -9,26 +9,26 @@ export type Product = {
 };
 
 export type RawProduct = {
-  id: string;
-  title: string;
-  description: string;
-  variants: {
-    edges: {
-      node: {
-        price: {
-          amount: string;
-          currencyCode: string;
-        };
-      };
-    }[];
-  };
-  images: {
-    edges: {
-      node: {
-        url: string;
-      };
-    }[];
-  };
+   id: string;
+   title: string;
+   description: string;
+   variants: {
+      edges: {
+         node: {
+            price: {
+               amount: string;
+               currencyCode: string;
+            };
+         };
+      }[];
+   };
+   images: {
+      edges: {
+         node: {
+            url: string;
+         };
+      }[];
+   };
 };
 
 export type Category = {
