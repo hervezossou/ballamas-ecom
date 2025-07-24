@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Category } from "@/types";
 import { CategoryItem } from "../atoms/CategoryItem";
 import { useCategoryStore } from "@/lib/store";
@@ -11,7 +11,7 @@ const categories: Category[] = [
 ];
 
 export const CategoriesFilter = () => {
-   const { selectedCategory, setSelectedCategory } = useCategoryStore()
+   const { selectedCategory, setSelectedCategory } = useCategoryStore();
 
    return (
       <div className="flex flex-wrap gap-2.5">
