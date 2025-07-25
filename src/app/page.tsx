@@ -2,7 +2,6 @@ import { CollectionProducts } from "@/components/organisms/CollectionProducts";
 import { Button } from "@/components/atoms/Button";
 
 export default function Page() {
-
    return (
       <>
          {/* Home Hero Section */}
@@ -52,7 +51,8 @@ export default function Page() {
          {/* Lastest Trends in Summer Fashion */}
          <div className="w-full max-w-[1200px] mb-5">
             <p className="font-chillax font-semibold text-center lg:text-3xl">
-               Discover the latest trends in summer fashion. Shop now and refresh your wardrobe with our stylish summer shirts.
+               Discover the latest trends in summer fashion. Shop now and
+               refresh your wardrobe with our stylish summer shirts.
             </p>
          </div>
 
@@ -67,7 +67,8 @@ export default function Page() {
                      Our Collection
                   </h2>
                   <p className="font-archivo text-b-dark-gray text-sm md:text-base lg:text-lg text-center">
-                     Our latest collection, where classic and contemporary styles converge in perfect harmony.
+                     Our latest collection, where classic and contemporary
+                     styles converge in perfect harmony.
                   </p>
                </div>
                <div className="w-full max-w-[996px] flex flex-col gap-4 md:flex-row">

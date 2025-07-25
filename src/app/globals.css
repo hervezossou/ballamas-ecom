@@ -34,7 +34,7 @@
 }
 
 .text-stroke-white {
-   -webkit-text-stroke: 1.5px var(--color-b-white, #FFF);
+   -webkit-text-stroke: 1.5px var(--color-b-white, #fff);
 }
 
 input:-webkit-autofill {
