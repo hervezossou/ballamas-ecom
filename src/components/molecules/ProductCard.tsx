@@ -70,7 +70,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             </AnimatePresence>
          </div>
          <div className="flex flex-col gap-1">
-            <h3 className="text-3xl uppercase font-archivo font-semibold">
+            <h3 className="text-3xl uppercase font-archivo font-semibold overflow-hidden text-ellipsis whitespace-nowrap">
                {product.title}
             </h3>
             <p className="text-b-dark-gray text-xl font-archivo font-semibold md:text-3xl">
