@@ -5,7 +5,7 @@ export function mapProduct(raw: RawProduct): Product {
    const imageNode = raw.images.edges[0]?.node;
 
    return {
-      id: raw.id,
+      handle: raw.handle,
       title: raw.title,
       description: raw.description,
       price: {
