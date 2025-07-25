@@ -25,11 +25,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
          initial={{ opacity: 0 }}
          whileInView={{ opacity: 1 }}
          transition={{ duration: 3, ease: "easeInOut" }}
-         className="flex flex-col gap-4 cursor-pointer"
+         className="w-[322.67px] mx-auto flex flex-col gap-4 cursor-pointer"
          onClick={() => router.push(`/products/${shopifyId}`)}
       >
          <div
-            className="relative h-[405px] flex items-center justify-center rounded-4xl"
+            className="w-auto relative h-[405px] flex items-center justify-center rounded-4xl"
             onMouseEnter={() => setIsVisible(true)}
             onMouseLeave={() => setIsVisible(false)}
          >
@@ -46,10 +46,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                      initial={{ opacity: 0 }}
                      animate={{ opacity: 1 }}
                      exit={{ opacity: 0 }}
-                     className="absolute inset-0 flex flex-col justify-between bg-b-black/50 p-4.5 rounded-4xl"
+                     className="absolute inset-0 w-[322.67px] h-full flex flex-col justify-between bg-b-black/50 p-4.5 rounded-4xl"
                   >
                      <PromoBadge variant="light" />
-                     <div className="flex items-center gap-1">
+                     <div className="mx-auto flex items-center gap-1">
                         <Button
                            variant="filled"
                            color="white"
