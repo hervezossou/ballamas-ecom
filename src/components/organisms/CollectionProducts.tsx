@@ -8,7 +8,7 @@ import { ProductCard } from "../molecules/ProductCard";
 
 import { useCategoryStore } from "@/lib/store";
 import { Product } from "@/types";
-import { getCollectionByHandle } from "@/lib/products";
+import { getCollectionByHandle, getAllProducts } from "@/lib/products";
 
 export const CollectionProducts = () => {
 
@@ -23,6 +23,11 @@ export const CollectionProducts = () => {
                 setIsLoading(true);
                 if (selectedCategory === "all") {
                     // Fetch random products
+                    const fetchedProducts = await getAllProducts(9);
+                    if (fetchedProducts) {
+                        setProducts(fetchedProducts || []);
+                    }
+                    setIsLoading(false);
                 } else {
                     // Fetch products based on the selected category
                     const fetchedProducts = await getCollectionByHandle(selectedCategory, 9);
