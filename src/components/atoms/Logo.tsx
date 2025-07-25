@@ -10,7 +10,7 @@ export const Logo = ({ variant }: LogoProps) => {
             alt="Logo"
             width={158}
             height={36}
-            className="object-cover"
+            className="object-cover size-auto"
          />
       </Link>
    );
