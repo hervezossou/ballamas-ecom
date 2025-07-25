@@ -7,7 +7,6 @@ import { useState } from "react";
 import { Product } from "@/types";
 import { PromoBadge } from "../atoms/PromoBadge";
 import { Button } from "../atoms/Button";
-import { extractShopifyId } from "@/lib/utils/shopifyId";
 
 interface ProductCardProps {
    product: Product;
@@ -15,18 +14,17 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
    const [isVisible, setIsVisible] = useState(false);
+   const productHandle = product.handle;
    const router = useRouter();
-
-   const shopifyId = extractShopifyId(product.id);
 
    return (
       <motion.div
-         id={product.id}
+         id={product.handle}
          initial={{ opacity: 0 }}
          whileInView={{ opacity: 1 }}
          transition={{ duration: 3, ease: "easeInOut" }}
          className="w-[322.67px] mx-auto flex flex-col gap-4 cursor-pointer"
-         onClick={() => router.push(`/products/${shopifyId}`)}
+         onClick={() => router.push(`/products/${productHandle}`)}
       >
          <div
             className="w-auto relative h-[405px] flex items-center justify-center rounded-4xl"

@@ -58,7 +58,7 @@ export const CollectionProducts = () => {
                     <ProductCardSkeleton key={index} />
                  ))
                : products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.handle} product={product} />
                  ))}
          </div>
       </section>

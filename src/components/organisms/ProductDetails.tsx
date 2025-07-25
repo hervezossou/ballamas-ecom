@@ -16,10 +16,11 @@ interface ProductDetailsProps {
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
    const colors: ProductColor[] = ["ocean", "olive", "purple", "green"];
    const [selectedColor, setSelectedColor] = useState<ProductColor>(colors[0]);
+   const productHandle = product.handle;
 
    return (
       <div
-         id={product.id}
+         id={productHandle}
          className="flex flex-col items-start justify-center gap-8 lg:h-[600px] lg:flex-row lg:gap-10.5"
       >
          <div className="flex flex-col items-center w h-full justify-center gap-4 rounded-4xl lg:w-[579px]">

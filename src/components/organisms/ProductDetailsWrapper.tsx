@@ -1,28 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getProductById } from "@/lib/products";
+import { getProductByHandle } from "@/lib/products";
 import { Product } from "@/types";
 import { ProductDetails } from "./ProductDetails";
 import { ProductDetailsSkeleton } from "../skeletons/ProductDetailsSkeleton";
-import { buildShopifyGlobalId } from "@/lib/utils/shopifyId";
 
 interface ProductCardWrapperProps {
-   id: string;
+   handle: string;
 }
 
-export const ProductDetailsWrapper = ({ id }: ProductCardWrapperProps) => {
+export const ProductDetailsWrapper = ({ handle }: ProductCardWrapperProps) => {
    const [product, setProduct] = useState<Product | null>(null);
-   const globalId = buildShopifyGlobalId(id, "Product");
 
    useEffect(() => {
       async function fetchProduct() {
-         const data = await getProductById(globalId);
+         const data = await getProductByHandle(handle);
          setProduct(data);
       }
 
       fetchProduct();
-   }, [id]);
+   }, [handle]);
 
    if (!product) return <ProductDetailsSkeleton />;
 
