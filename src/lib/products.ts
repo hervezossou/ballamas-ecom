@@ -50,3 +50,51 @@ export async function getProductById(id: string): Promise<Product | null> {
       return null;
    }
 }
+
+export async function getCollectionByHandle (handle: string, limit: number = 10): Promise<Product[] | null> {
+   const query = gql`
+      query GetCollectionByHandle($handle: String!, $limit: Int!) {
+         collectionByHandle(handle: $handle) {
+            title
+            handle
+            description
+            products(first: $limit) {
+               edges {
+                  node {
+                     id
+                     title
+                     description
+                     variants(first: 1) {
+                        edges {
+                           node {
+                              price {
+                                 amount
+                                 currencyCode
+                              }
+                           }
+                        }
+                     }
+                     images(first: 1) {
+                        edges {
+                           node {
+                              url
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   `;
+
+   try {
+      const variables = { handle, limit };
+      const response = await graphqlClient.request<{ collectionByHandle: { products: { edges: { node: RawProduct }[] } } }>(query, variables);
+
+      return response.collectionByHandle.products.edges.map(edge => mapProduct(edge.node));
+   } catch (error) {
+      console.error("Failed to fetch collection:", error);
+      return null;
+   }
+}
