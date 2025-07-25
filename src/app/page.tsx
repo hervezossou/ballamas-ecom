@@ -1,11 +1,7 @@
-import { ProductCardWrapper } from "@/components/molecules/ProductCardWrapper";
-import { CategoriesFilter } from "@/components/molecules/CategoriesFilter";
+import { CollectionProducts } from "@/components/organisms/CollectionProducts";
 import { Button } from "@/components/atoms/Button";
 
 export default function Page() {
-   const productId = "gid://shopify/Product/7982905098262";
-   const hoodieId = "gid://shopify/Product/7982904639510";
-   const slidesId = "gid://shopify/Product/7982853619734";
 
    return (
       <>
@@ -61,14 +57,7 @@ export default function Page() {
          </div>
 
          {/* Categories Filter and Product Cards Section */}
-         <section className="flex flex-col items-center justify-between py-10 gap-10">
-            <CategoriesFilter />
-            <div className="w-full max-w-[1200px] grid grid-cols-1 items-center justify-between gap-8 md:grid-cols-2 lg:px-20 xl:grid-cols-3">
-               <ProductCardWrapper id={hoodieId} />
-               <ProductCardWrapper id={productId} />
-               <ProductCardWrapper id={slidesId} />
-            </div>
-         </section>
+         <CollectionProducts />
 
          {/* Our Collection Section */}
          <div className="w-full flex items-center justify-center py-10 mb-14">
