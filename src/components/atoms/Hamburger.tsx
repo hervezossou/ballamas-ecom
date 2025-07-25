@@ -9,6 +9,7 @@ export const Hamburger = ({ isOpen, onClick }: HamburgerProps) => {
          role="button"
          aria-label={isOpen ? "Close menu" : "Open menu"}
          aria-expanded={isOpen}
+         aria-roledescription="Hamburger menu"
       >
          <Image
             src={`/icons/menu-${isOpen ? "close" : "open"}.svg`}
@@ -16,7 +17,7 @@ export const Hamburger = ({ isOpen, onClick }: HamburgerProps) => {
             width={42}
             height={24}
             className="w-auto h-auto"
-            priority={true}
+            priority={false}
          />
       </div>
    );

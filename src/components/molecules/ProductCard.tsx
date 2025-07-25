@@ -38,7 +38,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                width={322.67}
                height={405}
                alt={`${product.title} image`}
-               className="object-cover h-full rounded-4xl transition-all ease-in-out duration-300"
+               className="object-cover size-auto rounded-4xl transition-all ease-in-out duration-300"
             />
             <AnimatePresence initial={false}>
                {isVisible && (
