@@ -11,6 +11,7 @@ export const Logo = ({ variant }: LogoProps) => {
             width={158}
             height={36}
             className="object-cover size-auto"
+            priority
          />
       </Link>
    );
