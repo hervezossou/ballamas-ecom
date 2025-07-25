@@ -3,15 +3,15 @@ import { gql } from "graphql-request";
 import { Product, RawProduct } from "@/types";
 import { mapProduct } from "@/lib/utils/mapProduct";
 
-export type GetProductByIdResponse = {
+export type ProductByHandleResponse = {
    product: RawProduct;
 };
 
-export async function getProductById(id: string): Promise<Product | null> {
+export async function getProductByHandle(handle: string): Promise<Product | null> {
    const query = gql`
-      query GetProductById($id: ID!) {
-         product(id: $id) {
-            id
+      query GetProductByHandle($handle: String!) {
+         product(handle: $handle) {
+            handle
             title
             description
             variants(first: 1) {
@@ -36,17 +36,15 @@ export async function getProductById(id: string): Promise<Product | null> {
    `;
 
    try {
-      const variables = { id };
-      const response = await graphqlClient.request<GetProductByIdResponse>(
+      const variables = { handle };
+      const response = await graphqlClient.request<ProductByHandleResponse>(
          query,
          variables
       );
 
-      //if (!response.product) return null;
-
       return mapProduct(response.product);
    } catch (error) {
-      console.error("Failed to fetch product:", error);
+      console.error("Failed to fetch product by handle:", error);
       return null;
    }
 }
@@ -64,7 +62,7 @@ export async function getCollectionByHandle(
             products(first: $limit) {
                edges {
                   node {
-                     id
+                     handle
                      title
                      description
                      variants(first: 1) {
@@ -114,7 +112,7 @@ export async function getAllProducts(
          products(first: $limit) {
             edges {
                node {
-                  id
+                  handle
                   title
                   description
                   variants(first: 1) {
