@@ -27,7 +27,7 @@ export const CollectionProducts = () => {
                     // Fetch products based on the selected category
                     const fetchedProducts = await getCollectionByHandle(selectedCategory, 9);
                     if (fetchedProducts) {
-                        setProducts(fetchedProducts);
+                        setProducts(fetchedProducts || []);
                     }
                     setIsLoading(false);
                 }
@@ -39,33 +39,19 @@ export const CollectionProducts = () => {
         }
 
         fecthProducts();
-    }, [isLoading, selectedCategory]);
-
-    if (!products || products.length === 0) {
-        return (
-            <section className="flex flex-col items-center justify-between py-10 gap-10">
-                <CategoriesFilter />
-
-                {/* Skeleton Loader for Product Cards */}
-                <div className="w-full max-w-[1200px] grid grid-cols-1 items-center justify-between gap-8 md:grid-cols-2 lg:px-20 xl:grid-cols-3">
-                    {Array.from({ length: 6 }).map((_, index) => (
-                        <ProductCardSkeleton key={index} />
-                    ))}
-                </div>
-            </section>
-        )
-    }
+    }, [selectedCategory]);
 
     return (
         <section className="flex flex-col items-center justify-between py-10 gap-10">
             {/* Category Filter */}
             <CategoriesFilter />
             <div className="w-full max-w-[1200px] grid grid-cols-1 items-center justify-between gap-8 md:grid-cols-2 lg:px-20 xl:grid-cols-3">
-                {products.map((product) => (
-                    <ProductCard 
-                        key={product.id} 
-                        product={product} 
-                    />
+                {isLoading ?
+                    Array.from({ length: 6 }).map((_, index) => (
+                        <ProductCardSkeleton key={index} />
+                    ))
+                     : products.map((product) => (
+                        <ProductCard key={product.id} product={product} />
                 ))}
             </div>
         </section>
