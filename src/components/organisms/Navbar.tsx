@@ -76,6 +76,7 @@ export const Navbar = () => {
                            width={18}
                            height={18}
                            alt={`${link.name} icon`}
+                           className="object-cover size-auto"
                         />
                      )}
                      {link.name === "Search"
@@ -100,6 +101,7 @@ export const Navbar = () => {
                         alt="search icon"
                         width={18}
                         height={18}
+                        className="object-cover size-auto"
                      />
                   </Link>
                   <Link href="/cart" className="hover:cursor-pointer">
@@ -108,6 +110,7 @@ export const Navbar = () => {
                         alt="cart icon"
                         width={20}
                         height={20}
+                        className="object-cover size-auto"
                      />
                   </Link>
                </div>
@@ -148,6 +151,7 @@ export const Navbar = () => {
                                     width={18}
                                     height={18}
                                     alt={`${link.name} icon`}
+                                    className="object-cover size-auto"
                                  />
                               )}
                               {link.name === "Search"
