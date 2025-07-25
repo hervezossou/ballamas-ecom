@@ -1,5 +1,5 @@
 export type Product = {
-   id: string;
+   handle: string;
    title: string;
    description: string;
    price: { amount: number; currencyCode: string };
@@ -9,7 +9,7 @@ export type Product = {
 };
 
 export type RawProduct = {
-   id: string;
+   handle: string;
    title: string;
    description: string;
    variants: {
