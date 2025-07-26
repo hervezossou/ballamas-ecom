@@ -1,6 +1,6 @@
 import { graphqlClient } from "./graphqlClient";
 import { gql } from "graphql-request";
-import { Product, RawProduct } from "@/types";
+import { Product, RawProduct, Collection } from "@/types";
 import { mapProduct } from "@/lib/utils/mapProduct";
 
 export type ProductByHandleResponse = {
@@ -149,6 +149,40 @@ export async function getAllProducts(
       return response.products.edges.map((edge) => mapProduct(edge.node));
    } catch (error) {
       console.error("Failed to fetch all products:", error);
+      return null;
+   }
+}
+
+export const getAllCollections = async (
+   limit: number = 10
+): Promise<Collection[] | null> => {
+   const query = gql`
+      query GetAllCollections($limit: Int!) {
+         collections(first: $limit) {
+            edges {
+            cursor
+               node {
+                  handle
+                  title
+                  description
+                  image {
+                     url
+                  }
+               }
+            }
+         }
+      }
+   `;
+
+   try {
+      const variables = { limit };
+      const response = await graphqlClient.request<{
+         collections: { edges: { node: Collection }[] };
+      }>(query, variables);
+
+      return response.collections.edges.map((edge) => edge.node);
+   } catch (error) {
+      console.error("Failed to fetch all collections:", error);
       return null;
    }
 }
