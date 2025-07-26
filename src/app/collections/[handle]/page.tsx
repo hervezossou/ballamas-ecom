@@ -34,7 +34,7 @@ export default function CollectionProductsPage() {
   }, [collectionHandle]);
 
   return (
-    <section className="flex flex-col items-start justify-between py-10 gap-10 lg:py-20">
+    <section className="mx-auto flex flex-col items-start justify-between py-10 gap-10 lg:py-16">
       <h1 className="font-archivo font-bold text-2xl lg:ml-20 lg:text-4xl">
         Collection: {collectionHandle.toUpperCase()}
       </h1>
