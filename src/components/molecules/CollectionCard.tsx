@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation";
 import { Collection } from "@/types"
 
 interface CollectionCardProps {
@@ -7,8 +8,17 @@ interface CollectionCardProps {
 }
 
 export const CollectionCard = ({ collection }: CollectionCardProps) => {
+    const router = useRouter();
+    const handleClick = () => {
+        router.push(`/collections/${collection.handle}`);
+    };
+
     return (
-        <div className="mx-auto flex flex-col items-start justify-between gap-2 group drop-shadow-xl">
+        <div 
+            className="mx-auto flex flex-col items-start justify-between gap-2 group drop-shadow-xl" 
+            onClick={handleClick}
+            tabIndex={0}
+        >
            <div className="flex items-center justify-center size-96 bg-gray-200 rounded-2xl overflow-hidden">
                 <Image
                     src={collection.image.url}
