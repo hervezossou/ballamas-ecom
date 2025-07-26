@@ -7,7 +7,9 @@ export type ProductByHandleResponse = {
    product: RawProduct;
 };
 
-export async function getProductByHandle(handle: string): Promise<Product | null> {
+export async function getProductByHandle(
+   handle: string
+): Promise<Product | null> {
    const query = gql`
       query GetProductByHandle($handle: String!) {
          product(handle: $handle) {
