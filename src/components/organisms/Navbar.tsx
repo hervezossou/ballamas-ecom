@@ -11,12 +11,12 @@ export const Navbar = () => {
    const navLinks = [
       { name: "Men", path: "/collections/men" },
       { name: "Women", path: "/collections/women" },
-      { name: "Kids", path: "/collection/kids" },
+      { name: "Unisex", path: "/collections/unisex" },
       { name: "Collections", path: "/collections" },
    ];
 
    const shopLinks = [
-      { name: "Shop", path: "/products" },
+      { name: "Shop", path: "/collections" },
       { name: "About Us", path: "/about-us" },
       { name: "Account", path: "/account", icon: "/icons/user.svg" },
       { name: "Cart", path: "/cart" },
@@ -24,7 +24,7 @@ export const Navbar = () => {
    ];
 
    const mobileShopLinks = [
-      { name: "Shop", path: "/products" },
+      { name: "Shop", path: "/collections" },
       { name: "About Us", path: "/about-us" },
       { name: "Account", path: "/account", icon: "/icons/user.svg" },
       { name: "FAQ", path: "/faq" },
