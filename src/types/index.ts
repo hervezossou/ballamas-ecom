@@ -31,6 +31,15 @@ export type RawProduct = {
    };
 };
 
+export type Collection = {
+   handle: string;
+   title: string;
+   description: string;
+   image: {
+      url: string;
+   }
+};
+
 export type Category = {
    label: string;
    quantity: number;
