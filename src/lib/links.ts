@@ -1,17 +1,15 @@
 export const productLinks = [
-   { name: "Jacket", href: "#" },
-   { name: "T-Shirt", href: "#" },
+   { name: "Tops", href: "/collections/tops" },
+   { name: "Bottoms", href: "/collections/bottoms" },
    { name: "Hoodies", href: "#" },
-   { name: "Shoes", href: "#" },
-   { name: "Sunglasses", href: "#" },
+   { name: "Shoes", href: "/collections/shoes" },
 ];
 
 export const categoriesLinks = [
-   { name: "Man", href: "#" },
-   { name: "Woman", href: "#" },
-   { name: "Kids", href: "#" },
-   { name: "Gift", href: "#" },
-   { name: "New Arrival", href: "#" },
+   { name: "Men", href: "/collections/men" },
+   { name: "Women", href: "/collections/women" },
+   { name: "Unisex", href: "/collections/unisex" },
+   { name: "Featured", href: "/collections/featured" },
 ];
 
 export const socialLinks = [
