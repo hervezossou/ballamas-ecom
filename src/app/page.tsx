@@ -1,7 +1,7 @@
 import { CollectionProducts } from "@/components/organisms/CollectionProducts";
 import { Button } from "@/components/atoms/Button";
 
-export default function Page() {
+export default function HomePage() {
    return (
       <>
          {/* Home Hero Section */}
