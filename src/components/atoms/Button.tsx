@@ -61,7 +61,7 @@ export const Button = ({
 
    const variantStyles = {
       filled: `${color === "black" ? "bg-b-black text-b-white hover:bg-b-black/90" : "bg-b-white text-b-black hover:bg-b-white/90"}`,
-      outlined: `${color === "black" ? "bg-transparent text-b-black border-2 border-b-black hover:bg-b-black hover:text-b-white" : "bg-transparent text-b-white border-2 border-b-white"}`,
+      outlined: `${color === "black" ? "bg-transparent text-b-black border-2 border-b-black hover:bg-b-green hover:border-none hover:text-b-white" : "bg-transparent text-b-white border-2 border-b-white"}`,
    };
 
    return (
