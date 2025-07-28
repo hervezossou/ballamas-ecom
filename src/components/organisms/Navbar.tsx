@@ -6,6 +6,7 @@ import { Logo } from "../atoms/Logo";
 import { Hamburger } from "../atoms/Hamburger";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useCartStore } from "@/lib/store";
 
 export const Navbar = () => {
    const navLinks = [
@@ -31,8 +32,8 @@ export const Navbar = () => {
       { name: "Contact Us", path: "/contact-us" },
    ];
 
-   const [cartSize, setCartSize] = useState(0);
    const [isOpen, setIsOpen] = useState(false);
+   const totalItems = useCartStore((state) => state.cartItems.length);
 
    useEffect(() => {
       if (isOpen) {
@@ -82,7 +83,7 @@ export const Navbar = () => {
                      {link.name === "Search"
                         ? null
                         : link.name === "Cart"
-                          ? `Cart(${cartSize})`
+                          ? `Cart(${totalItems})`
                           : link.name}
                   </Link>
                ))}
@@ -157,7 +158,7 @@ export const Navbar = () => {
                               {link.name === "Search"
                                  ? null
                                  : link.name === "Cart"
-                                   ? `Cart(${cartSize})`
+                                   ? `Cart(${totalItems})`
                                    : link.name}
                            </Link>
                         ))}
