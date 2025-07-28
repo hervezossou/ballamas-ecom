@@ -26,7 +26,7 @@ export const CartProduct = ({ item }: CartItemProps) => {
                 color={item.color}
                 size={item.size}
             />
-            <div className="w-[335px] flex items-center justify-between gap-30">
+            <div className="w-[335px] flex items-center justify-between gap-28">
                 <div className="flex items-center gap-2">
                     <QuantityStepper 
                         handle={item.handle}
@@ -35,7 +35,7 @@ export const CartProduct = ({ item }: CartItemProps) => {
                         onDecrement={() => decrement(item.handle)} 
                     />
                     <button 
-                        className="size-11 flex items-center justify-center gap-2 bg-b-light-gray p-3 rounded-full"
+                        className="size-11 flex items-center justify-center gap-2 bg-b-light-gray p-3 rounded-full cursor-pointer"
                         aria-description="Remove Item"
                         onClick={() => removeItem(item.handle)}
                     >
@@ -49,7 +49,7 @@ export const CartProduct = ({ item }: CartItemProps) => {
                 </div>
                 <div className="flex items-center w-28">
                     <span className="font-archivo font-semibold text-xs text-b-black md:text-sm">
-                        {totalPrice}
+                        ${totalPrice}
                     </span>
                 </div>
             </div>
