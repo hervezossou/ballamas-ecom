@@ -6,6 +6,7 @@ import Image from "next/image";
 
 export const CartContainer = () => {
     const cartItems = useCartStore((state) => state.cartItems);
+    const clearCart = useCartStore((state) => state.clearCart);
     const totalItems = cartItems.length;
     //const totalPrice = cartItems.reduce((total, item) => total + item.price.amount * item.quantity, 0).toFixed(2);
 
@@ -15,15 +16,18 @@ export const CartContainer = () => {
                 <h1 className="text-2xl font-bold mb-4">
                     Cart({totalItems})
                 </h1>
-                <button className="w-auto h-9 flex items-center justify-between gap-2 bg-b-light-gray p-3 rounded-full cursor-pointer group hover:bg-b-gray transition-colors duration-300">
+                <button 
+                    className="w-auto h-9 flex items-center justify-between gap-2 bg-b-light-gray p-3 rounded-full cursor-pointer group hover:bg-red-500 transition-colors duration-300"
+                    onClick={() => clearCart()}
+                >
                     <Image 
                         src="/icons/trash.svg" 
-                        width={16} 
-                        height={16} 
+                        width={14} 
+                        height={14} 
                         alt="Clear Cart"
-                        className="text-b-dark-gray text-sm hover:text-b-black transition-colors duration-300"
+                        className="fill-none text-sm group-hover:fill-b-white transition-colors duration-300"
                     />
-                    <span className="font-archivo font-medium text-xs text-b-dark-gray group-hover:text-b-black md:text-sm">
+                    <span className="font-archivo font-medium text-xs text-b-dark-gray group-hover:text-b-white md:text-sm">
                         Clear Cart
                     </span>
                 </button>
