@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { ProductDetailsWrapper } from "@/components/organisms/ProductDetailsWrapper";
 import { CollectionProducts } from "@/components/organisms/CollectionProducts";
 
-export default function ProductDetaulsPage() {
+export default function ProductDetailsPage() {
     const params = useParams();
     const productHandle = params.handle as string;
 
