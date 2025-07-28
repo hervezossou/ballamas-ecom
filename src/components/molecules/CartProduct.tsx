@@ -11,16 +11,14 @@ interface CartItemProps {
 // This component will display each item in the cart, including its image, title, color,
 
 export const CartProduct = ({ item }: CartItemProps) => {
-    const { onIncrement, onDecrement, removeItem } = useCartStore((state) => ({
-        onIncrement: state.increment,
-        onDecrement: state.decrement,
-        removeItem: state.removeItem
-    }));
+    const increment = useCartStore((state) => state.increment);
+    const decrement = useCartStore((state) => state.decrement);
+    const removeItem = useCartStore((state) => state.removeItem);
 
     const totalPrice = (item.price.amount * item.quantity).toFixed(2);
 
     return (
-        <div className="flex items-center justify-between gap-4 p-4 border-b border-b-light-gray">
+        <div className="w-full flex items-center justify-between gap-4 py-4 border-b-2 border-b-light-gray">
             <CartItemCard
                 image={item.featuredImage.url}
                 title={item.title}
@@ -28,30 +26,32 @@ export const CartProduct = ({ item }: CartItemProps) => {
                 color={item.color}
                 size={item.size}
             />
-            <div className="flex items-center">
-                <QuantityStepper 
-                    handle={item.handle}
-                    initialQuantity={item.quantity} 
-                    onIncrement={() => onIncrement(item.handle)} 
-                    onDecrement={() => onDecrement(item.handle)} 
-                />
-                <button 
-                    className="size-11 flex items-center justify-center gap-2 bg-b-light-gray p-3 rounded-full"
-                    aria-description="Remove Item"
-                    onClick={() => removeItem(item.handle)}
-                >
-                    <Image 
-                        src="/icons/trash.svg" 
-                        width={20} 
-                        height={20}
-                        alt="Remove Item"
+            <div className="w-[335px] flex items-center justify-between gap-30">
+                <div className="flex items-center gap-2">
+                    <QuantityStepper 
+                        handle={item.handle}
+                        initialQuantity={item.quantity} 
+                        onIncrement={() => increment(item.handle)} 
+                        onDecrement={() => decrement(item.handle)} 
                     />
-                </button>
-            </div>
-            <div className="flex items-center w-full maxw-w-28">
-                <span className="font-archivo font-semibold text-xs text-b-black md:text-sm">
-                    {totalPrice}
-                </span>
+                    <button 
+                        className="size-11 flex items-center justify-center gap-2 bg-b-light-gray p-3 rounded-full"
+                        aria-description="Remove Item"
+                        onClick={() => removeItem(item.handle)}
+                    >
+                        <Image 
+                            src="/icons/trash.svg" 
+                            width={20} 
+                            height={20}
+                            alt="Remove Item"
+                        />
+                    </button>
+                </div>
+                <div className="flex items-center w-28">
+                    <span className="font-archivo font-semibold text-xs text-b-black md:text-sm">
+                        {totalPrice}
+                    </span>
+                </div>
             </div>
         </div>
     )
