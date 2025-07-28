@@ -5,7 +5,6 @@ import { Button } from "@/components/atoms/Button";
 import { useRouter } from "next/navigation";
 import { OrderSummary } from "@/components/molecules/OrderSummary";
 import { CartContainer } from "@/components/organisms/CartContainer";
-import { CartItem } from "@/types";
 
 export default function CartPage() {
     const router = useRouter();
