@@ -54,7 +54,7 @@ export const Button = ({
             ? "w-[154px] px-5 py-3"
             : "w-[180px] px-5 py-3";
       }
-      return size === "large" ? "w-[180px] px-5 py-3" : "w-full px-5 py-4";
+      return size === "large" ? "w-[180px] px-5 py-3" : "w-auto px-5 py-4";
    };
 
    const widthStyles = getWidthStyles();
