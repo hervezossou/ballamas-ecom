@@ -36,7 +36,7 @@ export default function CartPage() {
                         onClick={handleGoToShop}
                     />
                 </div>
-            :   <div className="container w-full max-w-[1200px] flex flex-col items-center justify-between gap-2 min-h-screen py-20 lg:flex-row lg:items-start xl:justify-between lg:gap-4">
+            :   <div className="w-full flex flex-col items-center justify-between gap-2 min-h-screen py-20 lg:flex-row lg:items-start xl:justify-between lg:gap-10">
                     <CartContainer />
                     <OrderSummary />
                 </div>
