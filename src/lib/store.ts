@@ -1,39 +1,11 @@
 import { create } from "zustand";
-
-type CategoryStore = {
-   selectedCategory: string;
-   setSelectedCategory: (category: string) => void;
-};
+import { CartState, CartItem, CategoryStore } from "@/types";
 
 export const useCategoryStore = create<CategoryStore>((set) => ({
    selectedCategory: "all",
    setSelectedCategory: (category: string) =>
       set({ selectedCategory: category }),
 }));
-
-type CartItem = {
-   handle: string;
-   title: string;
-   color: string;
-   size: string;
-   price: {
-      amount: number;
-      currency: string;
-   }
-   featuredImage: {
-      url: string;
-   }
-   quantity: number;
-};
-
-interface CartState {
-   cartItems: CartItem[]; // contient tous les produits ajoutés au panier
-   addItem: (item: CartItem) => void; // ajoute un produit au panier
-   removeItem: (handle: string) => void;
-   clearCart: () => void;
-   increment: (handle: string) => void;
-   decrement: (handle: string) => void; 
-}
 
 export const useCartStore = create<CartState>((set) => ({
    cartItems: [],

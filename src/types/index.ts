@@ -1,3 +1,7 @@
+// src/types/index.ts
+
+// This file defines TypeScript types for the application, including Product, Collection, and CartItem types.
+
 export type Product = {
    handle: string;
    title: string;
@@ -57,3 +61,35 @@ export interface HamburgerProps {
 export type ProductSize = "XS" | "S" | "M" | "L" | "XL";
 
 export type ProductColor = "ocean" | "olive" | "purple" | "green";
+
+// CategoryStore type represents the state of the selected category in the application.
+export type CategoryStore = {
+   selectedCategory: string;
+   setSelectedCategory: (category: string) => void;
+};
+
+// CartItem type represents an item in the shopping cart.
+export type CartItem = {
+   handle: string;
+   title: string;
+   color: string;
+   size: string;
+   price: {
+      amount: number;
+      currency: string;
+   }
+   featuredImage: {
+      url: string;
+   }
+   quantity: number;
+};
+
+// CartState type represents the state of the shopping cart.
+export interface CartState {
+   cartItems: CartItem[]; // contient tous les produits ajoutés au panier
+   addItem: (item: CartItem) => void; // ajoute un produit au panier
+   removeItem: (handle: string) => void;
+   clearCart: () => void;
+   increment: (handle: string) => void;
+   decrement: (handle: string) => void; 
+}
