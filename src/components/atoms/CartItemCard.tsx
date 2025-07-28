@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ProductSize } from "@/types";
-import { mapSize } from "@/lib/utils/mapsize";
+import { mapSize } from "@/lib/utils/mapSize";
 
 interface CartItemCardProps {
     title: string;
@@ -12,7 +12,7 @@ interface CartItemCardProps {
 
 export const CartItemCard = ({ title, image, color, size, price }: CartItemCardProps) => {
     return (
-        <div className="w-full max-w-[308px] h-18 flex items-start gap-2.5">
+        <div className="w-[308px] h-18 flex items-start gap-2.5">
             <div className="w-18 h-18 flex items-center justify-center">
                 <Image 
                     src={image}
