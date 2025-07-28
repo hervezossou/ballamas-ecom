@@ -16,7 +16,7 @@ export const OrderSummary = () => {
     }
 
     return (
-        <div className="w-96 flex flex-col gap-2 px-6 py-4 border border-b-light-gray shadow-md rounded-xl lg:gap-4">
+        <div className="w-96 flex flex-col gap-2 px-6 py-4 border border-b-light-gray rounded-xl lg:gap-4">
             <h3 className="text-xl text-left font-archivo font-semibold mb-2 lg:text-lg">
                 Order Summary
             </h3>
