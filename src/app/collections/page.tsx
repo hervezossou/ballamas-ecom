@@ -30,7 +30,7 @@ export default function CollectionsPage() {
 
   return (
     <>
-        <div className="w-full max-w-[1200px] flex flex-col items-start justify-between h-14 pt-8 px-10">
+        <div className="mt-8 w-full max-w-[1200px] flex flex-col items-start justify-between px-10">
             <h1 className="font-archivo font-bold text-2xl lg:text-4xl">
               Collections
             </h1>
