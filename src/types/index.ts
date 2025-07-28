@@ -73,7 +73,7 @@ export type CartItem = {
    handle: string;
    title: string;
    color: string;
-   size: string;
+   size: ProductSize;
    price: {
       amount: number;
       currency: string;
