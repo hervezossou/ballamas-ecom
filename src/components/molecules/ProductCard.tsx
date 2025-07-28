@@ -1,12 +1,14 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, color } from "motion/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Product } from "@/types";
+import { Product, ProductSize } from "@/types";
 import { PromoBadge } from "../atoms/PromoBadge";
 import { Button } from "../atoms/Button";
+import { mapProductToCartItem } from "@/lib/utils/mapProductToCartItem";
+import { useCartStore } from "@/lib/store";
 
 interface ProductCardProps {
    product: Product;
@@ -16,6 +18,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
    const [isVisible, setIsVisible] = useState(false);
    const productHandle = product.handle;
    const router = useRouter();
+   const addItem = useCartStore((state) => state.addItem);
+
+   const handleAddToCart = () => {
+      const cartProduct = mapProductToCartItem(product, 1,"S", "olive");
+      addItem(cartProduct)
+   }
 
    return (
       <motion.div
@@ -55,6 +63,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                            icon="/icons/cart.svg"
                            size="small"
                            className="font-mono"
+                           onClick={handleAddToCart}
                         />
                         <Button
                            variant="outlined"
