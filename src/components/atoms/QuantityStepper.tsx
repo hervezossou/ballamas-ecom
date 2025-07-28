@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 interface QuantityStepperProps {
@@ -10,7 +9,7 @@ interface QuantityStepperProps {
 
 export const QuantityStepper = ({handle, initialQuantity, onIncrement, onDecrement}: QuantityStepperProps) => {
     return (
-        <div className="w-[124px] h-11 flex items-center gap-2 bg-b-light-gray p-3 rounded-xl">
+        <div className="w-[124px] h-11 flex items-center justify-center gap-6 bg-b-light-gray p-3 rounded-4xl">
             <button 
                 onClick={() => onDecrement(handle)} 
                 disabled={initialQuantity <= 1} 
@@ -19,8 +18,8 @@ export const QuantityStepper = ({handle, initialQuantity, onIncrement, onDecreme
                 <Image 
                     src="/icons/remove.svg" 
                     alt="Decrement" 
-                    width={16} 
-                    height={16} 
+                    width={20} 
+                    height={20} 
                 />
             </button>
             <span className="font-archivo font-medium text-b-black text-xs md:text-sm">
@@ -33,8 +32,8 @@ export const QuantityStepper = ({handle, initialQuantity, onIncrement, onDecreme
                 <Image 
                     src="/icons/plus.svg" 
                     alt="Increment" 
-                    width={16} 
-                    height={16} 
+                    width={20} 
+                    height={20} 
                 />
             </button>
         </div>
