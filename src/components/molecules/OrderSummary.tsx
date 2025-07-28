@@ -16,8 +16,10 @@ export const OrderSummary = () => {
     }
 
     return (
-        <div className="w-[285px] flex flex-col gap-2 px-6 py-4 border border-b-light-gray shadow-md rounded-xl lg:gap-4">
-            <h3 className="text-xl font-archivo font-semibold mb-4 lg:text-lg">Order Summary</h3>
+        <div className="w-96 flex flex-col gap-2 px-6 py-4 border border-b-light-gray shadow-md rounded-xl lg:gap-4">
+            <h3 className="text-xl text-left font-archivo font-semibold mb-2 lg:text-lg">
+                Order Summary
+            </h3>
             {/* Here you would map through cart items and display them */}
             <div className="flex flex-col gap-3">
                 <div className="flex flex-col gap-1">
@@ -31,10 +33,10 @@ export const OrderSummary = () => {
                     </div>
                     <div className="flex justify-between mb-2">
                         <span className="font-archivo font-medium text-b-dark-gray text-sm">
-                            Shipping
+                            Discount
                         </span>
                         <span className="font-archivo font-medium text-b-dark-gray text-sm">
-                            ${discount}
+                            ${discount.toFixed(2)}
                         </span> 
                     </div>
                 </div>
@@ -52,8 +54,8 @@ export const OrderSummary = () => {
                         label="Checkout now"
                         variant="filled"
                         color="black"
-                        size="large"
-                        className="w-full mt-2"
+                        size="small"
+                        className="mt-4 py-6"
                         onClick={handleCheckout}
                     />
                 </div>
