@@ -18,7 +18,7 @@ export const CartProduct = ({ item }: CartItemProps) => {
     const totalPrice = (item.price.amount * item.quantity).toFixed(2);
 
     return (
-        <div className="w-full flex items-center justify-between gap-4 py-4 border-b-2 border-b-light-gray">
+        <div className="w-full flex items-center justify-between py-4 border-b-2 border-b-light-gray md:w-full lg:gap-20">
             <CartItemCard
                 image={item.featuredImage.url}
                 title={item.title}
@@ -26,7 +26,7 @@ export const CartProduct = ({ item }: CartItemProps) => {
                 color={item.color}
                 size={item.size}
             />
-            <div className="w-[335px] flex items-center justify-between gap-28">
+            <div className="w-auto flex items-center justify-between gap-5 md:w-[335px] lg:gap-28">
                 <div className="flex items-center gap-2">
                     <QuantityStepper 
                         handle={item.handle}
@@ -47,7 +47,7 @@ export const CartProduct = ({ item }: CartItemProps) => {
                         />
                     </button>
                 </div>
-                <div className="flex items-center w-28">
+                <div className="flex items-center lg:w-28">
                     <span className="font-archivo font-semibold text-xs text-b-black md:text-sm">
                         ${totalPrice}
                     </span>

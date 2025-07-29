@@ -12,7 +12,7 @@ interface CartItemCardProps {
 
 export const CartItemCard = ({ title, image, color, size, price }: CartItemCardProps) => {
     return (
-        <div className="w-[308px] h-18 flex items-start gap-2.5">
+        <div className="w-auto h-18 flex items-start gap-2.5 md:w-[308px]">
             <div className="w-18 h-18 flex items-center justify-center">
                 <Image 
                     src={image}

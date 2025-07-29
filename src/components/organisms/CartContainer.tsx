@@ -11,7 +11,7 @@ export const CartContainer = () => {
     //const totalPrice = cartItems.reduce((total, item) => total + item.price.amount * item.quantity, 0).toFixed(2);
 
     return (
-        <div className="container w-full max-w-[873px h-auto flex flex-col items-start justify-between gap-5">
+        <div className="w-full h-auto flex flex-col items-start justify-between gap-5">
             <div className="w-full flex items-center justify-between mb-4">
                 <h1 className="text-2xl font-bold mb-4">
                     Cart({totalItems})
@@ -33,10 +33,25 @@ export const CartContainer = () => {
                 </button>
             </div>
             {/* Here you would map through cart items and display them */}
-            <div className="w-full flex flex-col gap-4">
-                {cartItems.map((item) => (
-                    <CartProduct key={item.handle} item={item} />
-                ))}
+            <div className="w-full flex flex-col items-start justify-between gap-2">
+                <div className="w-full flex items-center justify-between pb-2 border-b-2 border-b-light-gray">
+                    <span className="w-full max-w-[308px] font-archivo font-medium text-b-dark-gray text-sm">
+                        Product
+                    </span>
+                    <div className="w-full max-w-[335px] flex items-center justify-between">
+                        <span className="ml-0 font-archivo font-medium text-b-dark-gray text-sm md:ml-10">
+                            Quantity
+                        </span>
+                        <span className="max-w-28 font-archivo font-medium text-right text-b-dark-gray text-sm">
+                            Price
+                        </span>
+                    </div>
+                </div>
+                <div className="w-full flex flex-col gap-4">
+                    {cartItems.map((item) => (
+                        <CartProduct key={item.handle} item={item} />
+                    ))}
+                </div>
             </div>
         </div>
     )
