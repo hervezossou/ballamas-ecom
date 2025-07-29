@@ -20,15 +20,17 @@ export default function CartPage() {
    return (
       <>
          {isEmpty ? (
-            <div className="container flex flex-col items-center justify-center mt-40 text-center">
-               <h2 className="font-archivo font-bold text-2xl mb-4 md:text-4xl xl:text-6xl">
-                  Your cart is empty
-               </h2>
-               <p className="text-b-dark-gray my-2 text-sm md:text-base">
-                  🛒 Looks like you haven’t added anything yet.
-               </p>
+            <div className="flex flex-col items-center justify-center gap-20 mt-40 text-center">
+               <div className="flex flex-col items-center gap-1 h-10">
+                  <h2 className="font-archivo font-bold text-2xl md:text-4xl xl:text-6xl">
+                     Your cart is empty!
+                  </h2>
+                  <p className="text-b-dark-gray text-sm md:text-base">
+                     🛒 Looks like you haven't added anything yet.
+                  </p>
+               </div>
                <Button
-                  className="mt-4 px-10 py-6"
+                  className="px-10 py-6"
                   label="Go to Shop"
                   variant="filled"
                   color="black"
