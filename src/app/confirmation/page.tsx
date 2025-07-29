@@ -2,7 +2,7 @@
 
 export default function ConfirmationPage() {
     return (
-        <div className="h-screen flex flex-col items-center justify-center gap-2.5">
+        <div className="mt-40 flex flex-col items-center justify-center gap-2.5">
             <div className="flex items-center justify-center size-[49px] border-3 border-b-b-black p-0.5 rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
                     <path d="M18 1.5L7 13.5L2 8.04545" stroke="#1D1D1D" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
