@@ -21,9 +21,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
    const addItem = useCartStore((state) => state.addItem);
 
    const handleAddToCart = () => {
-      const cartProduct = mapProductToCartItem(product, 1,"S", "olive");
-      addItem(cartProduct)
-   }
+      const cartProduct = mapProductToCartItem(product, 1, "S", "olive");
+      addItem(cartProduct);
+   };
 
    return (
       <motion.div
