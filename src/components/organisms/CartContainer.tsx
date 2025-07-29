@@ -48,7 +48,7 @@ export const CartContainer = () => {
             <div className="w-full flex flex-col gap-4">
                {cartItems.map((item) => (
                   <CartProduct
-                     key={`${item.handle}-${item.size}`}
+                     key={`${item.handle}-${item.size}-${item.color}`}
                      item={item}
                   />
                ))}
