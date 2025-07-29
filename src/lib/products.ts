@@ -160,7 +160,7 @@ export const getAllCollections = async (
       query GetAllCollections($limit: Int!) {
          collections(first: $limit) {
             edges {
-            cursor
+               cursor
                node {
                   handle
                   title
@@ -185,4 +185,4 @@ export const getAllCollections = async (
       console.error("Failed to fetch all collections:", error);
       return null;
    }
-}
+};
