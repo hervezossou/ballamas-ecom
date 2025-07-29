@@ -7,7 +7,9 @@ import { ColorBox } from "../atoms/ColorBox";
 import { Button } from "../atoms/Button";
 
 import { Product } from "@/types";
-import { ProductColor } from "@/types";
+import { ProductColor, ProductSize } from "@/types";
+import { mapProductToCartItem } from "@/lib/utils/mapProductToCartItem";
+import { useCartStore } from "@/lib/store";
 
 interface ProductDetailsProps {
    product: Product;
@@ -16,7 +18,20 @@ interface ProductDetailsProps {
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
    const colors: ProductColor[] = ["ocean", "olive", "purple", "green"];
    const [selectedColor, setSelectedColor] = useState<ProductColor>(colors[0]);
+   const [selectedSize, setSelectedSize] = useState<ProductSize>("XS");
+
    const productHandle = product.handle;
+   const addItem = useCartStore((state) => state.addItem);
+
+   const addToCart = () => {
+      const cartProduct = mapProductToCartItem(
+         product,
+         1,
+         selectedSize,
+         selectedColor
+      );
+      addItem(cartProduct);
+   };
 
    return (
       <div
@@ -63,7 +78,12 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      <h3 className="text-xl font-archivo font-medium text-b-black md:text-3xl">
                         Size:
                      </h3>
-                     <SizePicker />
+                     <SizePicker
+                        productSize={selectedSize}
+                        onSelect={(selectedSize) =>
+                           setSelectedSize(selectedSize)
+                        }
+                     />
                   </div>
                </div>
                <div className="flex w-[579px] items-center gap-2">
@@ -80,6 +100,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      label="ADD TO CART"
                      size="large"
                      className="w-full"
+                     onClick={addToCart}
                   />
                </div>
             </div>
