@@ -1,22 +1,22 @@
-import { useState } from "react";
 import { ProductSize } from "@/types";
 import { SizeBadge } from "../atoms/SizeBadge";
 
 const productSizes: ProductSize[] = ["XS", "S", "M", "L", "XL"];
 
-export const SizePicker = () => {
-   const [selectedSize, setSelectedSize] = useState<ProductSize>(
-      productSizes[0]
-   );
+interface SizePickerProps {
+   productSize: ProductSize;
+   onSelect: (size: ProductSize) => void;
+}
 
+export const SizePicker = ({ productSize, onSelect }: SizePickerProps) => {
    return (
       <div className="flex flex-wrap gap-2.5">
          {productSizes.map((size) => (
             <SizeBadge
                key={size}
                size={size}
-               isSelected={selectedSize === size}
-               onSelect={() => setSelectedSize(size)}
+               isSelected={size === productSize}
+               onSelect={() => onSelect(size)}
                variant="large"
             />
          ))}
