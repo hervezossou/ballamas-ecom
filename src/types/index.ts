@@ -41,7 +41,7 @@ export type Collection = {
    description: string;
    image: {
       url: string;
-   }
+   };
 };
 
 export type Category = {
@@ -72,15 +72,15 @@ export type CategoryStore = {
 export type CartItem = {
    handle: string;
    title: string;
-   color: string;
+   color: ProductColor;
    size: ProductSize;
    price: {
       amount: number;
       currency: string;
-   }
+   };
    featuredImage: {
       url: string;
-   }
+   };
    quantity: number;
 };
 
@@ -88,8 +88,8 @@ export type CartItem = {
 export interface CartState {
    cartItems: CartItem[]; // contient tous les produits ajoutés au panier
    addItem: (item: CartItem) => void; // ajoute un produit au panier
-   removeItem: (handle: string) => void;
+   removeItem: (handle: string, size: ProductSize, color: ProductColor) => void;
    clearCart: () => void;
-   increment: (handle: string) => void;
-   decrement: (handle: string) => void; 
+   increment: (handle: string, size: ProductSize, color: ProductColor) => void;
+   decrement: (handle: string, size: ProductSize, color: ProductColor) => void;
 }
