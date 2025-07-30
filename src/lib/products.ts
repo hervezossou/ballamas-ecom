@@ -56,24 +56,24 @@ type CollectionByHandleRequest = {
    handle: string;
    description: string;
    image: {
-      url: string
-   }
+      url: string;
+   };
    products: {
       edges: {
          node: RawProduct;
-      }[]
+      }[];
    };
-}
+};
 
 type CollectionByHandleResponse = {
    title: string;
    handle: string;
    description: string;
    image: {
-      url: string
-   }
+      url: string;
+   };
    products: Product[];
-}
+};
 
 export async function getCollectionByHandle(
    handle: string,
@@ -130,7 +130,9 @@ export async function getCollectionByHandle(
          handle: collection.handle,
          description: collection.description,
          image: collection.image,
-         products: collection.products.edges.map((edge) => mapProduct(edge.node)),
+         products: collection.products.edges.map((edge) =>
+            mapProduct(edge.node)
+         ),
       };
    } catch (error) {
       console.error("Failed to fetch collection:", error);
