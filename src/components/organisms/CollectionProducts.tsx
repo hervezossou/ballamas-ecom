@@ -34,7 +34,7 @@ export const CollectionProducts = () => {
                   9
                );
                const fetchedProducts = collection?.products;
-               
+
                if (fetchedProducts) {
                   setProducts(fetchedProducts || []);
                }
