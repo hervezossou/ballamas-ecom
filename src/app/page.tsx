@@ -1,7 +1,16 @@
+"use client"
+
 import { CollectionProducts } from "@/components/organisms/CollectionProducts";
 import { Button } from "@/components/atoms/Button";
+import { useRouter } from "next/navigation";
 
-export default function HomePage() {
+export default function Page() {
+   const router = useRouter()
+
+   const startShopping = () => {
+      router.push("/collections")
+   };
+
    return (
       <>
          {/* Home Hero Section */}
@@ -34,6 +43,7 @@ export default function HomePage() {
                         color="white"
                         layout="default"
                         label="Start shopping"
+                        onClick={startShopping}
                      />
                      <Button
                         variant="filled"
@@ -42,6 +52,7 @@ export default function HomePage() {
                         layout="default"
                         icon="/icons/arrow.svg"
                         iconAlt="Arrow up icon"
+                        onClick={startShopping}
                      />
                   </div>
                </div>
