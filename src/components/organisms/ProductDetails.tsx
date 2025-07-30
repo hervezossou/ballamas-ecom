@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SizePicker } from "../molecules/SizePicker";
 import { ColorBox } from "../atoms/ColorBox";
@@ -22,8 +23,9 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
 
    const productHandle = product.handle;
    const addItem = useCartStore((state) => state.addItem);
+   const router = useRouter();
 
-   const addToCart = () => {
+   const handleAddToCart = () => {
       const cartProduct = mapProductToCartItem(
          product,
          1,
@@ -31,6 +33,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
          selectedColor
       );
       addItem(cartProduct);
+   };
+
+   const handleBuyNow = () => {
+      handleAddToCart();
+      router.push("/checkout");
    };
 
    return (
@@ -93,6 +100,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      label="BUY NOW"
                      size="large"
                      className="w-full"
+                     onClick={handleBuyNow}
                   />
                   <Button
                      variant="outlined"
@@ -100,7 +108,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      label="ADD TO CART"
                      size="large"
                      className="w-full"
-                     onClick={addToCart}
+                     onClick={handleAddToCart}
                   />
                </div>
             </div>
