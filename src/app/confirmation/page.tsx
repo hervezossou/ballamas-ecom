@@ -1,6 +1,11 @@
-"use client";
+import { Metadata } from "next";
 
-export default function ConfirmationPage() {
+export const metadata: Metadata = {
+   title: "Confirmation de paiement",
+   description: "Veuillez confirmer votre paiement.",
+};
+
+export default function Page() {
    return (
       <div className="mt-40 flex flex-col items-center justify-center gap-2.5">
          <div className="flex items-center justify-center size-[49px] border-3 border-b-b-black p-0.5 rounded-full">
