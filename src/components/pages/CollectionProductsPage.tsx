@@ -19,7 +19,7 @@ export default function CollectionProductsPage() {
          try {
             setIsLoading(true);
             const collection = await getCollectionByHandle(collectionHandle);
-            const fetchedProducts = collection?.products
+            const fetchedProducts = collection?.products;
             if (fetchedProducts) {
                setProducts(fetchedProducts || []);
                setIsLoading(false);
