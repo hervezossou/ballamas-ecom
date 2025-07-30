@@ -5,7 +5,7 @@ import { Footer } from "@/components/organisms/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-   title: "Ballamas",
+   title: "Ballamas Shop",
    description: "Your online shop for fashionable llamas",
 };
 
