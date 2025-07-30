@@ -18,8 +18,8 @@ export default function CollectionProductsPage() {
       const fetchCollection = async () => {
          try {
             setIsLoading(true);
-            const fetchedProducts =
-               await getCollectionByHandle(collectionHandle);
+            const collection = await getCollectionByHandle(collectionHandle);
+            const fetchedProducts = collection?.products
             if (fetchedProducts) {
                setProducts(fetchedProducts || []);
                setIsLoading(false);
