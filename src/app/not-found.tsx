@@ -18,7 +18,7 @@ export default function NotFound() {
                 <h3 className="font-archivo font-semibold text-xl text-b-black md:text-2xl">
                     Page Not Found
                 </h3>
-                <p className="font-archivo text-sm text-center text-b-gray md:text-base">
+                <p className="font-archivo text-sm text-center text-b-dark-gray md:text-base">
                     Sorry, we couldn't find the page you're looking for.
                 </p>
             </div>
