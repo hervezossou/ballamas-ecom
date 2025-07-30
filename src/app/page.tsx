@@ -92,7 +92,7 @@ export default function HomePage() {
                            Classic Men
                         </h1>
                         <p className="font-archivo text-b-white text-sm md:text-lg">
-                           We’re changing the way things get made
+                           We're changing the way things get made
                         </p>
                      </div>
                   </div>
