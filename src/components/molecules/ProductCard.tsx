@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, AnimatePresence, color } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Product, ProductSize } from "@/types";
+import { Product } from "@/types";
 import { PromoBadge } from "../atoms/PromoBadge";
 import { Button } from "../atoms/Button";
 import { mapProductToCartItem } from "@/lib/utils/mapProductToCartItem";
@@ -23,6 +23,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
    const handleAddToCart = () => {
       const cartProduct = mapProductToCartItem(product, 1, "S", "olive");
       addItem(cartProduct);
+   };
+
+   const handleBuyNow = () => {
+      handleAddToCart();
+      router.push("/checkout");
    };
 
    return (
@@ -70,6 +75,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                            color="white"
                            label="BUY NOW"
                            size="small"
+                           onClick={handleBuyNow}
                         />
                      </div>
                   </motion.div>
