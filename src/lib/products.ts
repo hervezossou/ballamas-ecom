@@ -51,16 +51,43 @@ export async function getProductByHandle(
    }
 }
 
+type CollectionByHandleRequest = {
+   title: string;
+   handle: string;
+   description: string;
+   image: {
+      url: string
+   }
+   products: {
+      edges: {
+         node: RawProduct;
+      }[]
+   };
+}
+
+type CollectionByHandleResponse = {
+   title: string;
+   handle: string;
+   description: string;
+   image: {
+      url: string
+   }
+   products: Product[];
+}
+
 export async function getCollectionByHandle(
    handle: string,
    limit: number = 10
-): Promise<Product[] | null> {
+): Promise<CollectionByHandleResponse | null> {
    const query = gql`
       query GetCollectionByHandle($handle: String!, $limit: Int!) {
          collectionByHandle(handle: $handle) {
             title
             handle
             description
+            image {
+               url
+            }
             products(first: $limit) {
                edges {
                   node {
@@ -94,12 +121,17 @@ export async function getCollectionByHandle(
    try {
       const variables = { handle, limit };
       const response = await graphqlClient.request<{
-         collectionByHandle: { products: { edges: { node: RawProduct }[] } };
+         collectionByHandle: CollectionByHandleRequest;
       }>(query, variables);
 
-      return response.collectionByHandle.products.edges.map((edge) =>
-         mapProduct(edge.node)
-      );
+      const collection = response.collectionByHandle;
+      return {
+         title: collection.title,
+         handle: collection.handle,
+         description: collection.description,
+         image: collection.image,
+         products: collection.products.edges.map((edge) => mapProduct(edge.node)),
+      };
    } catch (error) {
       console.error("Failed to fetch collection:", error);
       return null;
