@@ -29,10 +29,12 @@ export const CollectionProducts = () => {
                setIsLoading(false);
             } else {
                // Fetch products based on the selected category
-               const fetchedProducts = await getCollectionByHandle(
+               const collection = await getCollectionByHandle(
                   selectedCategory,
                   9
                );
+               const fetchedProducts = collection?.products;
+               
                if (fetchedProducts) {
                   setProducts(fetchedProducts || []);
                }
