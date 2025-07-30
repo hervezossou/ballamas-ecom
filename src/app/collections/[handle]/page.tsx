@@ -8,7 +8,7 @@ export async function generateMetadata({
 }) {
    const collection = await getCollectionByHandle(params.handle);
 
-   if (!collection || collection.length === 0) {
+   if (!collection) {
       return {
          title: "Collection introuvable",
          description: "Aucune collection trouvée.",
@@ -16,8 +16,13 @@ export async function generateMetadata({
    }
 
    return {
-      title: `${params.handle.charAt(0).toUpperCase() + params.handle.slice(1)} | Collections`,
-      description: `Discover the products of the ${params.handle}'s collection`,
+      title: `${collection.title} | Collections`,
+      description: `Discover the products of the ${collection.title}'s collection`,
+      openGraph: {
+         title: collection.title,
+         description: collection.description,
+         images: [collection.image.url],
+      },
    };
 }
 
