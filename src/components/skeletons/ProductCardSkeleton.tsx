@@ -2,7 +2,7 @@
 
 export const ProductCardSkeleton = () => {
    return (
-      <div className="w-full max-w-[322.67px] flex flex-col gap-4 cursor-pointer animate-pulse">
+      <div className="w-full max-w-[332.67px] flex flex-col gap-4 cursor-pointer animate-pulse lg:w-[332.67px]">
          {/*Product Featured Image */}
          <div className="w-full h-[405px] flex items-center justify-center rounded-4xl bg-gray-300"></div>
 

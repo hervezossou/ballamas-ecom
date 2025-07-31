@@ -36,7 +36,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
          initial={{ opacity: 0 }}
          whileInView={{ opacity: 1 }}
          transition={{ duration: 3, ease: "easeInOut" }}
-         className="w-full max-w-[322.67px] mx-auto flex flex-col gap-4 cursor-pointer"
+         className="w-full max-w-[332.67px] mx-auto flex flex-col gap-4 cursor-pointer"
          onClick={() => router.push(`/products/${productHandle}`)}
       >
          <div
