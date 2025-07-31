@@ -1,13 +1,14 @@
 "use client";
 
-import { useParams } from "next/navigation";
-
 import { ProductDetailsWrapper } from "@/components/organisms/ProductDetailsWrapper";
 import { CollectionProducts } from "@/components/organisms/CollectionProducts";
 
-export default function ProductPage() {
-   const params = useParams();
-   const productHandle = params.handle as string;
+interface ProductPageProps {
+   handle: string;
+}
+
+export default function ProductPage({ handle }: ProductPageProps) {
+   const productHandle = handle as string;
 
    return (
       <>

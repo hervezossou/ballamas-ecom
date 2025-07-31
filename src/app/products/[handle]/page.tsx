@@ -1,12 +1,14 @@
 import ProductPage from "@/components/pages/ProductPage";
 import { getProductByHandle } from "@/lib/products";
+import { Metadata } from "next";
 
-export async function generateMetadata({
-   params,
-}: {
-   params: { handle: string };
-}) {
-   const product = await getProductByHandle(params.handle);
+interface ProductDetailsPageProps {
+   params : Promise<{ handle: string; }>;
+}
+
+export async function generateMetadata({ params, }: ProductDetailsPageProps) {
+   const { handle } = await params;
+   const product = await getProductByHandle(handle);
 
    if (!product) {
       return {
@@ -26,6 +28,8 @@ export async function generateMetadata({
    };
 }
 
-export default function Page() {
-   return <ProductPage />;
+export default async function Page( { params }: ProductDetailsPageProps) {
+   const { handle } = await params;
+   
+   return <ProductPage handle={handle} />;
 }
