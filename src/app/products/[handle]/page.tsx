@@ -6,7 +6,7 @@ interface ProductDetailsPageProps {
    params : Promise<{ handle: string; }>;
 }
 
-export async function generateMetadata({ params, }: ProductDetailsPageProps) {
+export async function generateMetadata({ params, }: ProductDetailsPageProps): Promise<Metadata> {
    const { handle } = await params;
    const product = await getProductByHandle(handle);
 
@@ -30,6 +30,6 @@ export async function generateMetadata({ params, }: ProductDetailsPageProps) {
 
 export default async function Page( { params }: ProductDetailsPageProps) {
    const { handle } = await params;
-   
+
    return <ProductPage handle={handle} />;
 }
