@@ -40,7 +40,7 @@ export const CartProduct = ({ item }: CartItemProps) => {
                />
                <button
                   className="size-11 flex items-center justify-center gap-2 bg-b-light-gray p-3 rounded-full cursor-pointer"
-                  aria-description="Remove Item"
+                  role="Remove Item"
                   onClick={() => removeItem(item.handle, item.size, item.color)}
                >
                   <Image
