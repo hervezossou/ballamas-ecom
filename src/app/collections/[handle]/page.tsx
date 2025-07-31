@@ -1,12 +1,16 @@
 import { getCollectionByHandle } from "@/lib/products";
 import CollectionProductsPage from "@/components/pages/CollectionProductsPage";
+import { Metadata } from "next";
+
+interface CollectionPageProps {
+   params: Promise<{ handle: string }>;
+}
 
 export async function generateMetadata({
    params,
-}: {
-   params: { handle: string };
-}) {
-   const collection = await getCollectionByHandle(params.handle);
+}: CollectionPageProps): Promise<Metadata> {
+   const { handle } = await params;
+   const collection = await getCollectionByHandle(handle);
 
    if (!collection) {
       return {
@@ -26,6 +30,8 @@ export async function generateMetadata({
    };
 }
 
-export default function Page() {
-   return <CollectionProductsPage />;
+export default async function Page({ params }: CollectionPageProps) {
+   const { handle } = await params;
+
+   return <CollectionProductsPage handle={handle} />;
 }

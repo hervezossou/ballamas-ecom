@@ -1,15 +1,13 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { getCollectionByHandle } from "@/lib/products";
 import { useState, useEffect } from "react";
 import { Product } from "@/types";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { ProductCardSkeleton } from "@/components/skeletons/ProductCardSkeleton";
 
-export default function CollectionProductsPage() {
-   const params = useParams();
-   const collectionHandle = params.handle as string;
+export default function CollectionProductsPage({ handle }: { handle: string }) {
+   const collectionHandle = handle as string;
 
    const [products, setProducts] = useState<Product[]>([]);
    const [isLoading, setIsLoading] = useState(true);
