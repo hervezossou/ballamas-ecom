@@ -68,14 +68,20 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                            icon="/icons/cart.svg"
                            size="small"
                            className="font-mono"
-                           onClick={handleAddToCart}
+                           onClick={(e) => {
+                              e.stopPropagation();
+                              handleAddToCart();
+                           }}
                         />
                         <Button
                            variant="outlined"
                            color="white"
                            label="BUY NOW"
                            size="small"
-                           onClick={handleBuyNow}
+                           onClick={(e) => {
+                              e.stopPropagation();
+                              handleBuyNow();
+                           }}
                         />
                      </div>
                   </motion.div>

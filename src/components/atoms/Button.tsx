@@ -10,7 +10,7 @@ interface ButtonProps {
    size: "small" | "large";
    layout?: "default" | "reverse";
    className?: string;
-   onClick?: () => void;
+   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const baseStyles = `flex items-center justify-center gap-[6px] rounded-full cursor-pointer transition-colors duration-300 font-semibold`;
