@@ -15,7 +15,7 @@ export const CartContainer = () => {
          <div className="w-full flex items-center justify-between mb-4">
             <h1 className="text-2xl font-bold mb-4">Cart({totalItems})</h1>
             <button
-               className="w-auto h-9 flex items-center justify-between gap-2 bg-b-light-gray p-3 rounded-full cursor-pointer group hover:bg-red-500 transition-colors duration-300"
+               className="w-auto h-9 flex items-center justify-between gap-2 bg-b-light-gray p-3 rounded-full cursor-pointer group"
                onClick={() => clearCart()}
             >
                <Image
@@ -23,9 +23,9 @@ export const CartContainer = () => {
                   width={14}
                   height={14}
                   alt="Clear Cart"
-                  className="fill-none text-sm group-hover:fill-b-white transition-colors duration-300"
+                  className="opacity-60 text-sm group-hover:opacity-120 transition-colors duration-300"
                />
-               <span className="font-archivo font-medium text-xs text-b-dark-gray group-hover:text-b-white md:text-sm">
+               <span className="font-archivo font-medium text-xs text-b-dark-gray group-hover:text-b-black md:text-sm">
                   Clear Cart
                </span>
             </button>
