@@ -2,9 +2,9 @@
 
 export const ProductCardSkeleton = () => {
    return (
-      <div className="w-full flex flex-col gap-4 cursor-pointer animate-pulse lg:w-[332.67px]">
+      <div className="w-full max-w-[322.67px] flex flex-col gap-4 cursor-pointer animate-pulse">
          {/*Product Featured Image */}
-         <div className="h-[405px] flex items-center justify-center rounded-4xl bg-gray-300"></div>
+         <div className="w-full h-[405px] flex items-center justify-center rounded-4xl bg-gray-300"></div>
 
          {/* Product Details */}
          <div className="flex flex-col gap-2">
