@@ -3,10 +3,12 @@ import { getProductByHandle } from "@/lib/products";
 import { Metadata } from "next";
 
 interface ProductDetailsPageProps {
-   params : Promise<{ handle: string; }>;
+   params: Promise<{ handle: string }>;
 }
 
-export async function generateMetadata({ params, }: ProductDetailsPageProps): Promise<Metadata> {
+export async function generateMetadata({
+   params,
+}: ProductDetailsPageProps): Promise<Metadata> {
    const { handle } = await params;
    const product = await getProductByHandle(handle);
 
@@ -28,7 +30,7 @@ export async function generateMetadata({ params, }: ProductDetailsPageProps): Pr
    };
 }
 
-export default async function Page( { params }: ProductDetailsPageProps) {
+export default async function Page({ params }: ProductDetailsPageProps) {
    const { handle } = await params;
 
    return <ProductPage handle={handle} />;
