@@ -7,7 +7,6 @@ import {
    ProductSize,
    ProductColor,
 } from "@/types";
-import { get } from "http";
 
 export const useCategoryStore = create<CategoryStore>()(
    persist(

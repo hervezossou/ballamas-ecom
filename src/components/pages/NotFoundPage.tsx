@@ -19,7 +19,7 @@ export const NotFoundPage = () => {
                Page Not Found
             </h3>
             <p className="font-archivo text-sm text-center text-b-dark-gray md:text-base">
-               Sorry, we couldn't find the page you're looking for.
+               Sorry, we couldn&apos;t find the page you&apos;re looking for.
             </p>
          </div>
          <Button

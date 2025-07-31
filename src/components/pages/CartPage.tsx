@@ -26,7 +26,7 @@ export const CartPage = () => {
                      Your cart is empty!
                   </h2>
                   <p className="text-b-dark-gray text-sm md:text-base">
-                     🛒 Looks like you haven't added anything yet.
+                     🛒 Looks like you haven&apos;t added anything yet.
                   </p>
                </div>
                <Button

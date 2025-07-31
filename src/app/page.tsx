@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
 import { CollectionProducts } from "@/components/organisms/CollectionProducts";
 import { Button } from "@/components/atoms/Button";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
-   const router = useRouter()
+   const router = useRouter();
 
    const startShopping = () => {
-      router.push("/collections")
+      router.push("/collections");
    };
 
    return (
@@ -103,7 +103,7 @@ export default function Page() {
                            Classic Men
                         </h1>
                         <p className="font-archivo text-b-white text-sm md:text-lg">
-                           We're changing the way things get made
+                           We&apos;re changing the way things get made
                         </p>
                      </div>
                   </div>
