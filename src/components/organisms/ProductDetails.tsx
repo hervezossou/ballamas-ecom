@@ -100,7 +100,10 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      label="BUY NOW"
                      size="large"
                      className="w-full"
-                     onClick={handleBuyNow}
+                     onClick={(e) => {
+                        e.stopPropagation();
+                        handleBuyNow();
+                     }}
                   />
                   <Button
                      variant="outlined"
@@ -108,7 +111,10 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      label="ADD TO CART"
                      size="large"
                      className="w-full"
-                     onClick={handleAddToCart}
+                     onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart();
+                     }}
                   />
                </div>
             </div>
