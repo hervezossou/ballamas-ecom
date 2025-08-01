@@ -231,7 +231,7 @@ export const getAllCollections = async (
 };
 
 export async function getProductRecommendations(
-   productId: String
+   productId: string
 ): Promise<ProductRecommendation[] | null> {
    const query = gql`
       query GetProductRecommendations($productId: ID!) {
