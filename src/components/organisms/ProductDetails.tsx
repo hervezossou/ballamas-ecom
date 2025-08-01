@@ -45,13 +45,13 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
          id={productHandle}
          className="flex flex-col items-start justify-center gap-8 lg:h-[600px] lg:flex-row lg:gap-10.5"
       >
-         <div className="flex flex-col items-center w h-full justify-center gap-4 rounded-4xl lg:w-[579px]">
+         <div className="flex flex-col items-center h-full justify-center gap-4 rounded-4xl lg:w-[579px]">
             <Image
                src={product.featuredImage.url}
                alt={`${product.title} image`}
                width={579}
                height={600}
-               className="object-cover h-full rounded-4xl transition-transform ease-in-out duration-300 hover:scale-105"
+               className="object-cover h-full rounded-4xl"
             />
          </div>
          <div className="flex flex-col items-start justify-between gap-4 lg:w-1/2 lg:gap-5.5">
