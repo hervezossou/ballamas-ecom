@@ -19,6 +19,7 @@ export async function getProductByHandle(
    const query = gql`
       query GetProductByHandle($handle: String!) {
          product(handle: $handle) {
+            id
             handle
             title
             description
@@ -97,6 +98,7 @@ export async function getCollectionByHandle(
             products(first: $limit) {
                edges {
                   node {
+                     id
                      handle
                      title
                      description
@@ -154,6 +156,7 @@ export async function getAllProducts(
          products(first: $limit, reverse: true) {
             edges {
                node {
+                  id
                   handle
                   title
                   description
@@ -226,3 +229,43 @@ export const getAllCollections = async (
       return null;
    }
 };
+
+export async function getProductRecommendations(
+   productId: String
+): Promise<ProductRecommendation[] | null> {
+   const query = gql`
+      query GetProductRecommendations($productId: ID!) {
+         productRecommendations(productId: $productId, intent: RELATED) {
+            id
+            title
+            handle
+            description
+            featuredImage {
+               url
+            }
+            variants(first: 1) {
+               edges {
+                  node {
+                     price {
+                        amount
+                        currencyCode
+                     }
+                  }
+               }
+            }
+         }
+      }
+   `;
+
+   try {
+      const variables = { productId };
+      const response = await graphqlClient.request<{
+         productRecommendations: RawProductRecommendation[];
+      }>(query, variables);
+
+      return response.productRecommendations.map(mapRawToProductRecommendation);
+   } catch (error) {
+      console.error("Failed to fetch all collections:", error);
+      return null;
+   }
+}
