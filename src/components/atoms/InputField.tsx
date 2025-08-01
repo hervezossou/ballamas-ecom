@@ -28,7 +28,7 @@ export const InputField = ({
 }: InputProps) => {
    return (
       <div
-         className={`w-full max-w-xs flex items-center bg-transparent gap-2 px-3.5 rounded-full font-archivo h-11 border ${color === "black" ? "border-b-dark-gray" : "border-b-white"} focus-within:border-2 focus-within:border-emerald-600`}
+         className={`w-full max-w-xs flex items-center bg-transparent gap-2 px-3.5 rounded-full font-archivo h-11 outline-2 ${color === "black" ? "outline-b-dark-gray" : "outline-b-white"} focus-within:outline-2 focus-within:outline-b-green`}
       >
          <label
             htmlFor={name}
