@@ -40,7 +40,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
          onClick={() => router.push(`/products/${productHandle}`)}
       >
          <div
-            className="w-auto relative h-[405px] flex items-center justify-center rounded-4xl"
+            className="w-[332.67px] relative h-[405px] flex items-center justify-center rounded-4xl"
             onMouseEnter={() => setIsVisible(true)}
             onMouseLeave={() => setIsVisible(false)}
          >
@@ -49,7 +49,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                width={322.67}
                height={405}
                alt={`${product.title} image`}
-               className="object-cover w-auto h-full rounded-4xl transition-all ease-in-out duration-300"
+               className="object-cover size-full rounded-4xl transition-all ease-in-out duration-300"
             />
             <AnimatePresence initial={false}>
                {isVisible && (
@@ -57,7 +57,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                      initial={{ opacity: 0 }}
                      animate={{ opacity: 1 }}
                      exit={{ opacity: 0 }}
-                     className="absolute inset-0 w-[322.67px] h-full flex flex-col justify-between bg-b-black/50 p-4.5 rounded-4xl"
+                     className="absolute inset-0 w-[332.67px] h-full flex flex-col justify-between bg-b-black/50 p-4.5 rounded-4xl"
                   >
                      <PromoBadge variant="light" />
                      <div className="mx-auto flex items-center gap-1">
