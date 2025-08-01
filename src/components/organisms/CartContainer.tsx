@@ -1,14 +1,13 @@
 "use client";
 
 import { useCartStore } from "@/lib/store";
-import { CartProduct } from "../molecules/CartProduct";
+import { CartProduct } from "@/components/molecules/CartProduct";
 import Image from "next/image";
 
 export const CartContainer = () => {
    const cartItems = useCartStore((state) => state.cartItems);
    const clearCart = useCartStore((state) => state.clearCart);
    const totalItems = cartItems.length;
-   //const totalPrice = cartItems.reduce((total, item) => total + item.price.amount * item.quantity, 0).toFixed(2);
 
    return (
       <div className="w-full h-auto flex flex-col items-start justify-between gap-5">
