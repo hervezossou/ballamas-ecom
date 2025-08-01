@@ -145,7 +145,7 @@ export async function getAllProducts(
 ): Promise<Product[] | null> {
    const query = gql`
       query GetAllProducts($limit: Int!) {
-         products(first: $limit) {
+         products(first: $limit, reverse: true) {
             edges {
                node {
                   handle
