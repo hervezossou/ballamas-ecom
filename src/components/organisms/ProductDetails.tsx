@@ -9,7 +9,7 @@ import { Button } from "../atoms/Button";
 
 import { Product } from "@/types";
 import { ProductColor, ProductSize } from "@/types";
-import { mapProductToCartItem } from "@/lib/utils/mapProductToCartItem";
+import { mapProductToCartItem } from "@/lib/mappers";
 import { useCartStore } from "@/lib/store";
 
 interface ProductDetailsProps {

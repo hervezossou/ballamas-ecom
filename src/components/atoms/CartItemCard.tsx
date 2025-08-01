@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ProductSize } from "@/types";
-import { mapSize } from "@/lib/utils/mapSize";
+import { mapSize } from "@/lib/mappers";
 
 interface CartItemCardProps {
    title: string;

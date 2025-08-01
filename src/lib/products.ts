@@ -1,7 +1,13 @@
 import { graphqlClient } from "./graphqlClient";
 import { gql } from "graphql-request";
-import { Product, RawProduct, Collection } from "@/types";
-import { mapProduct } from "@/lib/utils/mapProduct";
+import {
+   Product,
+   RawProduct,
+   Collection,
+   RawProductRecommendation,
+   ProductRecommendation,
+} from "@/types";
+import { mapRawToProductRecommendation, mapProduct } from "./mappers";
 
 export type ProductByHandleResponse = {
    product: RawProduct;

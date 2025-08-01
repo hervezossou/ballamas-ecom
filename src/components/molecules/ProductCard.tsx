@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Product } from "@/types";
 import { PromoBadge } from "../atoms/PromoBadge";
 import { Button } from "../atoms/Button";
-import { mapProductToCartItem } from "@/lib/utils/mapProductToCartItem";
+import { mapProductToCartItem } from "@/lib/mappers";
 import { useCartStore } from "@/lib/store";
 
 interface ProductCardProps {
