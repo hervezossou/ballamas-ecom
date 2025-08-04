@@ -27,7 +27,7 @@ export const NewsPage = () => {
       } 
 
       fetchArticles();
-   }, [isLoading]);
+   }, [isLoading, articles, setArticles]);
 
    return (
       <section className="h-auto w-full flex flex-col items-start justify-between gap-4 py-8 md:gap-8 lg:py-12">
