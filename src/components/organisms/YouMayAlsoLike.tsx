@@ -10,9 +10,7 @@ interface ProductRecommendationProps {
    handle: string;
 }
 
-export const YouMayAlsoLike = ({
-   handle,
-}: ProductRecommendationProps) => {
+export const YouMayAlsoLike = ({ handle }: ProductRecommendationProps) => {
    const [products, setProducts] = useState<ProductRecommendation[] | null>([]);
 
    useEffect(() => {
