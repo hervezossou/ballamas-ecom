@@ -14,6 +14,7 @@ export const Navbar = () => {
       { name: "Women", path: "/collections/women" },
       { name: "Unisex", path: "/collections/unisex" },
       { name: "Collections", path: "/collections" },
+      { name: "News", path: "/news" },
    ];
 
    const shopLinks = [
