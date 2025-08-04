@@ -6,6 +6,7 @@ import {
    CategoryStore,
    ProductSize,
    ProductColor,
+   Article
 } from "@/types";
 
 export const useCategoryStore = create<CategoryStore>()(
@@ -122,6 +123,23 @@ export const useCartStore = create<CartState>()(
                     },
                  }
                : undefined,
+      }
+   )
+);
+
+type ArticlesStore = {
+   articles: Article[];
+   setArticles: (articles: Article[]) => void;
+};
+
+export const useArticlesStore = create<ArticlesStore>()(
+   persist(
+      (set) => ({
+         articles: [],
+         setArticles: (articles) => set({ articles }),
+      }),
+      {
+         name: "articles-storage",
       }
    )
 );
