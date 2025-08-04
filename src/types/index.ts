@@ -132,3 +132,12 @@ export type ProductRecommendation = {
       currencyCode: string;
    };
 };
+
+export type Article = {
+   id: string;
+   handle: string;
+   title: string;
+   publishedAt: string;
+   excerpt: string;
+   contentHtml: string;
+};
