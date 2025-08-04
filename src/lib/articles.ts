@@ -9,14 +9,14 @@ export const getAllArticles = async (
       query GetAllArticles($limit: Int!) {
          articles(first: $limit, reverse: true) {
             edges {
-                node {
-                    id
-                    handle
-                    title
-                    publishedAt
-                    excerpt
-                    contentHtml
-                }
+               node {
+                  id
+                  handle
+                  title
+                  publishedAt
+                  excerpt
+                  contentHtml
+               }
             }
          }
       }

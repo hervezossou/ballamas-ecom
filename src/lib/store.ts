@@ -6,7 +6,7 @@ import {
    CategoryStore,
    ProductSize,
    ProductColor,
-   Article
+   Article,
 } from "@/types";
 
 export const useCategoryStore = create<CategoryStore>()(

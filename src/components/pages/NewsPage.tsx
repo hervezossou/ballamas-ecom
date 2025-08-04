@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { getAllArticles } from "@/lib/articles";
 import { ArticleCard } from "../molecules/ArticleCard";
 import { useArticlesStore } from "@/lib/store";
@@ -8,23 +8,23 @@ import { useArticlesStore } from "@/lib/store";
 export const NewsPage = () => {
    const [isLoading, setIsLoading] = useState(true);
    const { articles, setArticles } = useArticlesStore();
-   
+
    useEffect(() => {
       const fetchArticles = async () => {
-         try{
+         try {
             setIsLoading(true);
             const fetchedArticles = await getAllArticles(10);
             if (fetchedArticles) {
                setArticles(fetchedArticles);
-               setIsLoading(false)
-               console.log(articles)
+               setIsLoading(false);
+               console.log(articles);
             }
-         }catch(error){
+         } catch (error) {
             console.error("Error while fetching articles", error);
-         }finally {
+         } finally {
             setIsLoading(false);
          }
-      } 
+      };
 
       fetchArticles();
    }, [isLoading, articles, setArticles]);

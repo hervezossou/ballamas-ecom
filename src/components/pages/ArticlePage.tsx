@@ -2,7 +2,7 @@
 
 import { useArticlesStore } from "@/lib/store";
 import { notFound } from "next/navigation";
-import { formatDate } from "@/lib/utils"
+import { formatDate } from "@/lib/utils";
 
 interface ArticlePageProps {
    handle: string;
@@ -12,7 +12,7 @@ export const ArticlePage = ({ handle }: ArticlePageProps) => {
    const { articles } = useArticlesStore();
    const article = articles.find((a) => a.handle === handle);
 
-   if(!article) {
+   if (!article) {
       return notFound();
    }
 
@@ -26,8 +26,8 @@ export const ArticlePage = ({ handle }: ArticlePageProps) => {
                Published : {`${formatDate(String(article?.publishedAt))}`}
             </span>
          </div>
-         <article 
-            className="prose prose-neutral font-archivo prose-p:font-medium prose-h3:text-lg md:prose-h3:text-xl lg:prose-h3:text-2xl prose-p:text-justify prose-p:text-base lg:prose-p:text-lg max-w-5xl" 
+         <article
+            className="prose prose-neutral font-archivo prose-p:font-medium prose-h3:text-lg md:prose-h3:text-xl lg:prose-h3:text-2xl prose-p:text-justify prose-p:text-base lg:prose-p:text-lg max-w-5xl"
             dangerouslySetInnerHTML={{ __html: article.contentHtml }}
          />
       </section>
