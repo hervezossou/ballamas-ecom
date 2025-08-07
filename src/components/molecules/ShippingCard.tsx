@@ -24,7 +24,7 @@ export const ShippingCard = ({
                value={method.id}
                checked={isSelected}
                onChange={() => onSelect(method.id)}
-               className="mt-1 accent-b-black border-b-dark-gray checked:border-b-b-black checked:outline-none"
+               className="mt-1 accent-blue-600 size-4"
             />
             <label
                htmlFor={method.title}
@@ -39,7 +39,7 @@ export const ShippingCard = ({
             </label>
          </div>
          <span className="font-archivo font-medium text-b-black text-xs md:text-sm xl:text-base">
-            ${method.cost}
+            ${method.cost.toLocaleString()}
          </span>
       </div>
    );
