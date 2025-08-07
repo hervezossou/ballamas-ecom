@@ -141,3 +141,12 @@ export type Article = {
    excerpt: string;
    contentHtml: string;
 };
+
+// Checkout
+
+export type ShippingMethod = {
+   id: string;
+   title: string;
+   description: string;
+   cost: number;
+};
