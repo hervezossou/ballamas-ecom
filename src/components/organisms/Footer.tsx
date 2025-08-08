@@ -32,6 +32,7 @@ export const Footer = () => {
                            onChange={(e) => setEmail(e.target.value)}
                            placeholder="Your email"
                            color="white"
+                           showLabel={false}
                         />
                         <Button
                            variant="filled"
