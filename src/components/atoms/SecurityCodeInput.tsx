@@ -10,8 +10,8 @@ export const SecurityCodeInput = ({
    value,
    onChange,
    placeholder = "Security code",
-   id,
-   name,
+   id = "security-code",
+   name = "security-code",
 }: SecurityCodeInputProps) => {
    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const digitsOnly = e.target.value.replace(/\D/g, "").slice(0, 4);
