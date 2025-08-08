@@ -43,6 +43,7 @@ export const OrderBlock = () => {
                         type="text"
                         value={discountCode}
                         label="Discount Code"
+                        showLabel={false}
                         placeholder="Add discount code"
                         name="discount-code"
                         color="black"
