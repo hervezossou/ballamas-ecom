@@ -1,6 +1,6 @@
-import { OrderBlock } from "../organisms/OrderBlock";
-import { ShippingMethods } from "../organisms/ShippingMethods";
-import { PaymentForm } from "../organisms/PaymentForm";
+import { OrderBlock } from "@/components/organisms/OrderBlock";
+import { ShippingMethods } from "@/components/organisms/ShippingMethods";
+import { PaymentForm } from "@/components/organisms/PaymentForm";
 
 export const CheckoutPage = () => {
    return (
