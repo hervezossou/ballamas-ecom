@@ -36,3 +36,12 @@ export const formatExpiry = (input: string) => {
    if (month > 12) return "12";
    return digits.slice(0, 2) + "/" + digits.slice(2, 4);
 };
+
+// Delete every single character but not digits
+const cleanValue = (val: string) => val.replace(/\D/g, "").slice(0, 19);
+
+// format card number input
+export const formatCardNumber = (val: string) => {
+   const cleaned = cleanValue(val);
+   return cleaned.replace(/(.{4})/g, "$1 ").trim();
+};

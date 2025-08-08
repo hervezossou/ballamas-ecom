@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type InputType = "text" | "email" | "password";
+type InputType = "text" | "email" | "password" | "tel";
 type IconPosition = "left" | "right";
 
 interface InputProps {
