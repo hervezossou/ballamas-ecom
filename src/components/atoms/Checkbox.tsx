@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface CheckboxProps {
    checked: boolean;
-   onClick: () => void;
+   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
    className?: string;
 }
 
