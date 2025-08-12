@@ -34,7 +34,7 @@ export const YouMayAlsoLike = ({ handle }: ProductRecommendationProps) => {
          <h2 className="font-chillax font-semibold text-2xl lg:text-3xl">
             You may also like
          </h2>
-         <div className="w-full flex self-stretch flex-col items-center justify-between gap-2 lg:flex-row lg:gap-8 lg:overflow-x-scroll scrollbar-hide snap-x snap-mandatory">
+         <div className="w-full flex self-stretch flex-col items-center justify-between gap-2 md:flex-row md:gap-4 lg:gap-8 lg:overflow-x-scroll scrollbar-hide snap-x snap-mandatory">
             {products ? (
                products.map((product) => (
                   <ProductCard key={product.handle} product={product} />
