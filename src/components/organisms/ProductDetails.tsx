@@ -11,6 +11,7 @@ import { Product } from "@/types";
 import { ProductColor, ProductSize } from "@/types";
 import { mapProductToCartItem } from "@/lib/mappers";
 import { useCartStore } from "@/lib/store";
+import { useMediaQuery } from "@/lib/utils";
 
 interface ProductDetailsProps {
    product: Product;
@@ -40,10 +41,12 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
       router.push("/checkout");
    };
 
+   const isMobile = useMediaQuery("(max-width: 768px)");
+
    return (
       <div
          id={productHandle}
-         className="flex flex-col items-start justify-center gap-8 lg:h-[600px] lg:flex-row lg:gap-10.5"
+         className="w-full h-max flex flex-col items-start justify-center gap-8 lg:h-[600px] lg:flex-row lg:gap-10.5"
       >
          <div className="flex flex-col items-center h-full justify-center gap-4 rounded-4xl lg:w-[579px]">
             <Image
@@ -54,7 +57,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                className="object-cover h-full rounded-4xl"
             />
          </div>
-         <div className="flex flex-col items-start justify-between gap-4 lg:w-1/2 lg:gap-5.5">
+         <div className="flex flex-col items-start justify-between gap-0 lg:w-1/2 lg:gap-5.5">
             <div className="flex flex-col gap-4 h-[410px] lg:gap-5">
                <div className="flex flex-col gap-2 md:gap-3 lg:gap-4.5">
                   <h3 className="text-3xl font-chillax font-semibold md:text-[42px]">
@@ -93,13 +96,13 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      />
                   </div>
                </div>
-               <div className="flex w-[579px] items-center gap-2">
+               <div className="w-full flex items-center gap-2 md:w-[579px]">
                   <Button
                      variant="filled"
                      color="black"
                      label="BUY NOW"
-                     size="large"
-                     className="w-full"
+                     size={`${isMobile ? "small" : "large"}`}
+                     className="w-full py-6 md:py-7"
                      onClick={(e) => {
                         e.stopPropagation();
                         handleBuyNow();
@@ -109,8 +112,8 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                      variant="outlined"
                      color="black"
                      label="ADD TO CART"
-                     size="large"
-                     className="w-full"
+                     size={`${isMobile ? "small" : "large"}`}
+                     className="w-full py-6 md:py-7"
                      onClick={(e) => {
                         e.stopPropagation();
                         handleAddToCart();
