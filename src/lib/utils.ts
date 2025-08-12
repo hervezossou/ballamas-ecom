@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 export const formatDate = (dateString: string): string => {
    const date = new Date(dateString);
 
@@ -44,4 +48,22 @@ const cleanValue = (val: string) => val.replace(/\D/g, "").slice(0, 19);
 export const formatCardNumber = (val: string) => {
    const cleaned = cleanValue(val);
    return cleaned.replace(/(.{4})/g, "$1 ").trim();
+};
+
+export const useMediaQuery = (query: string) => {
+   const [matches, setMatches] = useState(false);
+
+   useEffect(() => {
+      const mediaQuery = window.matchMedia(query);
+
+      const handler = () => setMatches(mediaQuery.matches);
+
+      // Check at the mounting time
+      handler();
+      mediaQuery.addEventListener("change", handler);
+
+      return () => mediaQuery.removeEventListener("change", handler);
+   }, [query]);
+
+   return matches;
 };
