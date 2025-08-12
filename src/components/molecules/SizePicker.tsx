@@ -1,5 +1,6 @@
 import { ProductSize } from "@/types";
 import { SizeBadge } from "../atoms/SizeBadge";
+import { useMediaQuery } from "@/lib/utils";
 
 const productSizes: ProductSize[] = ["XS", "S", "M", "L", "XL"];
 
@@ -9,6 +10,8 @@ interface SizePickerProps {
 }
 
 export const SizePicker = ({ productSize, onSelect }: SizePickerProps) => {
+   const isMobile = useMediaQuery("(max-width: 768px)");
+
    return (
       <div className="flex flex-wrap gap-2.5">
          {productSizes.map((size) => (
@@ -17,7 +20,7 @@ export const SizePicker = ({ productSize, onSelect }: SizePickerProps) => {
                size={size}
                isSelected={size === productSize}
                onSelect={() => onSelect(size)}
-               variant="large"
+               variant={`${isMobile ? "small" : "large"}`}
             />
          ))}
       </div>
